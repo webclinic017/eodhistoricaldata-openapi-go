@@ -24,49 +24,34 @@ var (
 	_ _context.Context
 )
 
-// CompaniesApiService CompaniesApi service
-type CompaniesApiService service
+// ExchangesApiService ExchangesApi service
+type ExchangesApiService service
 
-type ApiListBulkFundamentalsRequest struct {
+type ApiListExchangeTickersRequest struct {
 	ctx        _context.Context
-	ApiService *CompaniesApiService
+	ApiService *ExchangesApiService
 	exchange   string
 	fmt        *string
-	symbols    *string
-	offset     *string
-	limit      *string
 }
 
-func (r ApiListBulkFundamentalsRequest) Fmt(fmt string) ApiListBulkFundamentalsRequest {
+func (r ApiListExchangeTickersRequest) Fmt(fmt string) ApiListExchangeTickersRequest {
 	r.fmt = &fmt
 	return r
 }
-func (r ApiListBulkFundamentalsRequest) Symbols(symbols string) ApiListBulkFundamentalsRequest {
-	r.symbols = &symbols
-	return r
-}
-func (r ApiListBulkFundamentalsRequest) Offset(offset string) ApiListBulkFundamentalsRequest {
-	r.offset = &offset
-	return r
-}
-func (r ApiListBulkFundamentalsRequest) Limit(limit string) ApiListBulkFundamentalsRequest {
-	r.limit = &limit
-	return r
-}
 
-func (r ApiListBulkFundamentalsRequest) Execute() ([]Fundamentals, *_nethttp.Response, error) {
-	return r.ApiService.ListBulkFundamentalsExecute(r)
+func (r ApiListExchangeTickersRequest) Execute() ([]ExchangeTicker, *_nethttp.Response, error) {
+	return r.ApiService.ListExchangeTickersExecute(r)
 }
 
 /*
- * ListBulkFundamentals Method for ListBulkFundamentals
- * List properties of bulk-fundamentals
+ * ListExchangeTickers Method for ListExchangeTickers
+ * List properties of exchangetickers
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param exchange string exchange (name or id) of the bulk-fundamentals
- * @return ApiListBulkFundamentalsRequest
+ * @param exchange string exchange (name or id) of the exchangetickers
+ * @return ApiListExchangeTickersRequest
  */
-func (a *CompaniesApiService) ListBulkFundamentals(ctx _context.Context, exchange string) ApiListBulkFundamentalsRequest {
-	return ApiListBulkFundamentalsRequest{
+func (a *ExchangesApiService) ListExchangeTickers(ctx _context.Context, exchange string) ApiListExchangeTickersRequest {
+	return ApiListExchangeTickersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		exchange:   exchange,
@@ -75,24 +60,24 @@ func (a *CompaniesApiService) ListBulkFundamentals(ctx _context.Context, exchang
 
 /*
  * Execute executes the request
- * @return []Fundamentals
+ * @return []ExchangeTicker
  */
-func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundamentalsRequest) ([]Fundamentals, *_nethttp.Response, error) {
+func (a *ExchangesApiService) ListExchangeTickersExecute(r ApiListExchangeTickersRequest) ([]ExchangeTicker, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Fundamentals
+		localVarReturnValue  []ExchangeTicker
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.ListBulkFundamentals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExchangesApiService.ListExchangeTickers")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/bulk-fundamentals/{exchange}"
+	localVarPath := localBasePath + "/exchange-symbol-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"exchange"+"}", _neturl.PathEscape(parameterToString(r.exchange, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -101,20 +86,8 @@ func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundament
 	if r.fmt == nil {
 		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
 	}
-	if r.symbols == nil {
-		return localVarReturnValue, nil, reportError("symbols is required and must be specified")
-	}
-	if r.offset == nil {
-		return localVarReturnValue, nil, reportError("offset is required and must be specified")
-	}
-	if r.limit == nil {
-		return localVarReturnValue, nil, reportError("limit is required and must be specified")
-	}
 
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
-	localVarQueryParams.Add("symbols", parameterToString(*r.symbols, ""))
-	localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -169,67 +142,63 @@ func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundament
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListFundamentalsRequest struct {
+type ApiListExchangesRequest struct {
 	ctx        _context.Context
-	ApiService *CompaniesApiService
-	ticker     string
-	filter     *string
+	ApiService *ExchangesApiService
+	fmt        *string
 }
 
-func (r ApiListFundamentalsRequest) Filter(filter string) ApiListFundamentalsRequest {
-	r.filter = &filter
+func (r ApiListExchangesRequest) Fmt(fmt string) ApiListExchangesRequest {
+	r.fmt = &fmt
 	return r
 }
 
-func (r ApiListFundamentalsRequest) Execute() (Fundamentals, *_nethttp.Response, error) {
-	return r.ApiService.ListFundamentalsExecute(r)
+func (r ApiListExchangesRequest) Execute() ([]Exchange, *_nethttp.Response, error) {
+	return r.ApiService.ListExchangesExecute(r)
 }
 
 /*
- * ListFundamentals Method for ListFundamentals
- * List properties of fundamentals
+ * ListExchanges Method for ListExchanges
+ * List properties of exchanges
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param ticker string ticker (name or id) of the fundamentals
- * @return ApiListFundamentalsRequest
+ * @return ApiListExchangesRequest
  */
-func (a *CompaniesApiService) ListFundamentals(ctx _context.Context, ticker string) ApiListFundamentalsRequest {
-	return ApiListFundamentalsRequest{
+func (a *ExchangesApiService) ListExchanges(ctx _context.Context) ApiListExchangesRequest {
+	return ApiListExchangesRequest{
 		ApiService: a,
 		ctx:        ctx,
-		ticker:     ticker,
 	}
 }
 
 /*
  * Execute executes the request
- * @return Fundamentals
+ * @return []Exchange
  */
-func (a *CompaniesApiService) ListFundamentalsExecute(r ApiListFundamentalsRequest) (Fundamentals, *_nethttp.Response, error) {
+func (a *ExchangesApiService) ListExchangesExecute(r ApiListExchangesRequest) ([]Exchange, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Fundamentals
+		localVarReturnValue  []Exchange
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.ListFundamentals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExchangesApiService.ListExchanges")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/fundamentals/{ticker}"
-	localVarPath = strings.Replace(localVarPath, "{"+"ticker"+"}", _neturl.PathEscape(parameterToString(r.ticker, "")), -1)
+	localVarPath := localBasePath + "/exchanges-list"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.filter == nil {
-		return localVarReturnValue, nil, reportError("filter is required and must be specified")
+	if r.fmt == nil {
+		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
 	}
 
-	localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
+	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

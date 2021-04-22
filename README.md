@@ -78,12 +78,18 @@ All URIs are relative to *https://eodhistoricaldata.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CompaniesApi* | [**ListBulkFundamentals**](docs/CompaniesApi.md#listbulkfundamentals) | **Get** /bulk-fundamentals/{ticker} | 
+*CompaniesApi* | [**ListBulkFundamentals**](docs/CompaniesApi.md#listbulkfundamentals) | **Get** /bulk-fundamentals/{exchange} | 
 *CompaniesApi* | [**ListFundamentals**](docs/CompaniesApi.md#listfundamentals) | **Get** /fundamentals/{ticker} | 
+*ExchangesApi* | [**ListExchangeTickers**](docs/ExchangesApi.md#listexchangetickers) | **Get** /exchange-symbol-list | 
+*ExchangesApi* | [**ListExchanges**](docs/ExchangesApi.md#listexchanges) | **Get** /exchanges-list | 
+*NewsApi* | [**ListNews**](docs/NewsApi.md#listnews) | **Get** /news | 
+*QuotesApi* | [**ReadQuotes**](docs/QuotesApi.md#readquotes) | **Get** /eod/{ticker} | 
 
 
 ## Documentation For Models
 
+ - [Exchange](docs/Exchange.md)
+ - [ExchangeTicker](docs/ExchangeTicker.md)
  - [Fundamentals](docs/Fundamentals.md)
  - [FundamentalsAnalystRatings](docs/FundamentalsAnalystRatings.md)
  - [FundamentalsComponents](docs/FundamentalsComponents.md)
@@ -111,6 +117,8 @@ Class | Method | HTTP request | Description
  - [FundamentalsSplitsDividendsNumberDividendsByYear](docs/FundamentalsSplitsDividendsNumberDividendsByYear.md)
  - [FundamentalsTechnicals](docs/FundamentalsTechnicals.md)
  - [FundamentalsValuation](docs/FundamentalsValuation.md)
+ - [New](docs/New.md)
+ - [Quote](docs/Quote.md)
 
 
 ## Documentation For Authorization

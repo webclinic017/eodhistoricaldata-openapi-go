@@ -4,14 +4,14 @@ All URIs are relative to *https://eodhistoricaldata.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListBulkFundamentals**](CompaniesApi.md#ListBulkFundamentals) | **Get** /bulk-fundamentals/{ticker} | 
+[**ListBulkFundamentals**](CompaniesApi.md#ListBulkFundamentals) | **Get** /bulk-fundamentals/{exchange} | 
 [**ListFundamentals**](CompaniesApi.md#ListFundamentals) | **Get** /fundamentals/{ticker} | 
 
 
 
 ## ListBulkFundamentals
 
-> []Fundamentals ListBulkFundamentals(ctx, ticker).Fmt(fmt).Offset(offset).Limit(limit).Execute()
+> []Fundamentals ListBulkFundamentals(ctx, exchange).Fmt(fmt).Symbols(symbols).Offset(offset).Limit(limit).Execute()
 
 
 
@@ -30,14 +30,15 @@ import (
 )
 
 func main() {
-    ticker := "AAPL.US" // string | string ticker (name or id) of the bulk-fundamentals
-    fmt := "fmt_example" // string | string fmt (name or id) of the bulk-fundamentals
+    exchange := "exchange_example" // string | string exchange (name or id) of the bulk-fundamentals
+    fmt := "["json","csv"]" // string | string fmt (name or id) of the bulk-fundamentals
+    symbols := "symbols_example" // string | string symbols (name or id) of the bulk-fundamentals
     offset := "offset_example" // string | string offset (name or id) of the bulk-fundamentals
     limit := "limit_example" // string | string limit (name or id) of the bulk-fundamentals
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CompaniesApi.ListBulkFundamentals(context.Background(), ticker).Fmt(fmt).Offset(offset).Limit(limit).Execute()
+    resp, r, err := api_client.CompaniesApi.ListBulkFundamentals(context.Background(), exchange).Fmt(fmt).Symbols(symbols).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompaniesApi.ListBulkFundamentals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ticker** | **string** | string ticker (name or id) of the bulk-fundamentals | 
+**exchange** | **string** | string exchange (name or id) of the bulk-fundamentals | 
 
 ### Other Parameters
 
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **fmt** | **string** | string fmt (name or id) of the bulk-fundamentals | 
+ **symbols** | **string** | string symbols (name or id) of the bulk-fundamentals | 
  **offset** | **string** | string offset (name or id) of the bulk-fundamentals | 
  **limit** | **string** | string limit (name or id) of the bulk-fundamentals | 
 
