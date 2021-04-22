@@ -78,6 +78,7 @@ All URIs are relative to *https://eodhistoricaldata.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CompaniesApi* | [**ListBulkFundamentals**](docs/CompaniesApi.md#listbulkfundamentals) | **Get** /bulk-fundamentals/{ticker} | 
 *CompaniesApi* | [**ListFundamentals**](docs/CompaniesApi.md#listfundamentals) | **Get** /fundamentals/{ticker} | 
 
 
@@ -85,6 +86,7 @@ Class | Method | HTTP request | Description
 
  - [Fundamentals](docs/Fundamentals.md)
  - [FundamentalsAnalystRatings](docs/FundamentalsAnalystRatings.md)
+ - [FundamentalsComponents](docs/FundamentalsComponents.md)
  - [FundamentalsESGScores](docs/FundamentalsESGScores.md)
  - [FundamentalsESGScoresActivitiesInvolvement](docs/FundamentalsESGScoresActivitiesInvolvement.md)
  - [FundamentalsEarnings](docs/FundamentalsEarnings.md)
@@ -98,6 +100,7 @@ Class | Method | HTTP request | Description
  - [FundamentalsGeneralListings](docs/FundamentalsGeneralListings.md)
  - [FundamentalsGeneralOfficers](docs/FundamentalsGeneralOfficers.md)
  - [FundamentalsHighlights](docs/FundamentalsHighlights.md)
+ - [FundamentalsHistoricalTickerComponentsData](docs/FundamentalsHistoricalTickerComponentsData.md)
  - [FundamentalsHolders](docs/FundamentalsHolders.md)
  - [FundamentalsHoldersData](docs/FundamentalsHoldersData.md)
  - [FundamentalsInsiderTransactionsData](docs/FundamentalsInsiderTransactionsData.md)
@@ -112,7 +115,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- Endpoints do not require authorization.
+
+
+### api_key
+
+- **Type**: API key
+- **API key parameter name**: api_key
+- **Location**: URL query string
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: api_key and passed in as the auth context for each request.
 
 
 ## Documentation for Utility Methods

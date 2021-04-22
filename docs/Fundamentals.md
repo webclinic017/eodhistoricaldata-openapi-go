@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **General** | Pointer to [**FundamentalsGeneral**](FundamentalsGeneral.md) |  | [optional] 
+**Components** | Pointer to [**FundamentalsComponents**](FundamentalsComponents.md) |  | [optional] 
+**HistoricalTickerComponents** | Pointer to [**[]FundamentalsHistoricalTickerComponentsData**](FundamentalsHistoricalTickerComponentsData.md) |  | [optional] 
 **Highlights** | Pointer to [**FundamentalsHighlights**](FundamentalsHighlights.md) |  | [optional] 
 **Valuation** | Pointer to [**FundamentalsValuation**](FundamentalsValuation.md) |  | [optional] 
 **SharesStats** | Pointer to [**FundamentalsSharesStats**](FundamentalsSharesStats.md) |  | [optional] 
@@ -61,6 +63,56 @@ SetGeneral sets General field to given value.
 `func (o *Fundamentals) HasGeneral() bool`
 
 HasGeneral returns a boolean if a field has been set.
+
+### GetComponents
+
+`func (o *Fundamentals) GetComponents() FundamentalsComponents`
+
+GetComponents returns the Components field if non-nil, zero value otherwise.
+
+### GetComponentsOk
+
+`func (o *Fundamentals) GetComponentsOk() (*FundamentalsComponents, bool)`
+
+GetComponentsOk returns a tuple with the Components field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponents
+
+`func (o *Fundamentals) SetComponents(v FundamentalsComponents)`
+
+SetComponents sets Components field to given value.
+
+### HasComponents
+
+`func (o *Fundamentals) HasComponents() bool`
+
+HasComponents returns a boolean if a field has been set.
+
+### GetHistoricalTickerComponents
+
+`func (o *Fundamentals) GetHistoricalTickerComponents() []FundamentalsHistoricalTickerComponentsData`
+
+GetHistoricalTickerComponents returns the HistoricalTickerComponents field if non-nil, zero value otherwise.
+
+### GetHistoricalTickerComponentsOk
+
+`func (o *Fundamentals) GetHistoricalTickerComponentsOk() (*[]FundamentalsHistoricalTickerComponentsData, bool)`
+
+GetHistoricalTickerComponentsOk returns a tuple with the HistoricalTickerComponents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHistoricalTickerComponents
+
+`func (o *Fundamentals) SetHistoricalTickerComponents(v []FundamentalsHistoricalTickerComponentsData)`
+
+SetHistoricalTickerComponents sets HistoricalTickerComponents field to given value.
+
+### HasHistoricalTickerComponents
+
+`func (o *Fundamentals) HasHistoricalTickerComponents() bool`
+
+HasHistoricalTickerComponents returns a boolean if a field has been set.
 
 ### GetHighlights
 

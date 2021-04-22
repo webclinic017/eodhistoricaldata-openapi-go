@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,6 +8,7 @@ configuration.go
 docs/CompaniesApi.md
 docs/Fundamentals.md
 docs/FundamentalsAnalystRatings.md
+docs/FundamentalsComponents.md
 docs/FundamentalsESGScores.md
 docs/FundamentalsESGScoresActivitiesInvolvement.md
 docs/FundamentalsEarnings.md
@@ -22,6 +22,7 @@ docs/FundamentalsGeneralAddressData.md
 docs/FundamentalsGeneralListings.md
 docs/FundamentalsGeneralOfficers.md
 docs/FundamentalsHighlights.md
+docs/FundamentalsHistoricalTickerComponentsData.md
 docs/FundamentalsHolders.md
 docs/FundamentalsHoldersData.md
 docs/FundamentalsInsiderTransactionsData.md
@@ -37,6 +38,7 @@ go.mod
 go.sum
 model_fundamentals.go
 model_fundamentals_analyst_ratings.go
+model_fundamentals_components.go
 model_fundamentals_earnings.go
 model_fundamentals_earnings_annual.go
 model_fundamentals_earnings_history.go
@@ -50,6 +52,7 @@ model_fundamentals_general_address_data.go
 model_fundamentals_general_listings.go
 model_fundamentals_general_officers.go
 model_fundamentals_highlights.go
+model_fundamentals_historical_ticker_components_data.go
 model_fundamentals_holders.go
 model_fundamentals_holders_data.go
 model_fundamentals_insider_transactions_data.go

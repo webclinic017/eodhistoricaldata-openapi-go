@@ -16,19 +16,21 @@ import (
 
 // Fundamentals struct for Fundamentals
 type Fundamentals struct {
-	General             *FundamentalsGeneral                   `json:"General,omitempty"`
-	Highlights          *FundamentalsHighlights                `json:"Highlights,omitempty"`
-	Valuation           *FundamentalsValuation                 `json:"Valuation,omitempty"`
-	SharesStats         *FundamentalsSharesStats               `json:"SharesStats,omitempty"`
-	Technicals          *FundamentalsTechnicals                `json:"Technicals,omitempty"`
-	SplitsDividends     *FundamentalsSplitsDividends           `json:"SplitsDividends,omitempty"`
-	AnalystRatings      *FundamentalsAnalystRatings            `json:"AnalystRatings,omitempty"`
-	Holders             *FundamentalsHolders                   `json:"Holders,omitempty"`
-	InsiderTransactions *[]FundamentalsInsiderTransactionsData `json:"InsiderTransactions,omitempty"`
-	ESGScores           *FundamentalsESGScores                 `json:"ESGScores,omitempty"`
-	OutstandingShares   *FundamentalsOutstandingShares         `json:"outstandingShares,omitempty"`
-	Earnings            *FundamentalsEarnings                  `json:"Earnings,omitempty"`
-	Financials          *FundamentalsFinancials                `json:"Financials,omitempty"`
+	General                    *FundamentalsGeneral                          `json:"General,omitempty"`
+	Components                 *FundamentalsComponents                       `json:"Components,omitempty"`
+	HistoricalTickerComponents *[]FundamentalsHistoricalTickerComponentsData `json:"HistoricalTickerComponents,omitempty"`
+	Highlights                 *FundamentalsHighlights                       `json:"Highlights,omitempty"`
+	Valuation                  *FundamentalsValuation                        `json:"Valuation,omitempty"`
+	SharesStats                *FundamentalsSharesStats                      `json:"SharesStats,omitempty"`
+	Technicals                 *FundamentalsTechnicals                       `json:"Technicals,omitempty"`
+	SplitsDividends            *FundamentalsSplitsDividends                  `json:"SplitsDividends,omitempty"`
+	AnalystRatings             *FundamentalsAnalystRatings                   `json:"AnalystRatings,omitempty"`
+	Holders                    *FundamentalsHolders                          `json:"Holders,omitempty"`
+	InsiderTransactions        *[]FundamentalsInsiderTransactionsData        `json:"InsiderTransactions,omitempty"`
+	ESGScores                  *FundamentalsESGScores                        `json:"ESGScores,omitempty"`
+	OutstandingShares          *FundamentalsOutstandingShares                `json:"outstandingShares,omitempty"`
+	Earnings                   *FundamentalsEarnings                         `json:"Earnings,omitempty"`
+	Financials                 *FundamentalsFinancials                       `json:"Financials,omitempty"`
 }
 
 // NewFundamentals instantiates a new Fundamentals object
@@ -78,6 +80,70 @@ func (o *Fundamentals) HasGeneral() bool {
 // SetGeneral gets a reference to the given FundamentalsGeneral and assigns it to the General field.
 func (o *Fundamentals) SetGeneral(v FundamentalsGeneral) {
 	o.General = &v
+}
+
+// GetComponents returns the Components field value if set, zero value otherwise.
+func (o *Fundamentals) GetComponents() FundamentalsComponents {
+	if o == nil || o.Components == nil {
+		var ret FundamentalsComponents
+		return ret
+	}
+	return *o.Components
+}
+
+// GetComponentsOk returns a tuple with the Components field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Fundamentals) GetComponentsOk() (*FundamentalsComponents, bool) {
+	if o == nil || o.Components == nil {
+		return nil, false
+	}
+	return o.Components, true
+}
+
+// HasComponents returns a boolean if a field has been set.
+func (o *Fundamentals) HasComponents() bool {
+	if o != nil && o.Components != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComponents gets a reference to the given FundamentalsComponents and assigns it to the Components field.
+func (o *Fundamentals) SetComponents(v FundamentalsComponents) {
+	o.Components = &v
+}
+
+// GetHistoricalTickerComponents returns the HistoricalTickerComponents field value if set, zero value otherwise.
+func (o *Fundamentals) GetHistoricalTickerComponents() []FundamentalsHistoricalTickerComponentsData {
+	if o == nil || o.HistoricalTickerComponents == nil {
+		var ret []FundamentalsHistoricalTickerComponentsData
+		return ret
+	}
+	return *o.HistoricalTickerComponents
+}
+
+// GetHistoricalTickerComponentsOk returns a tuple with the HistoricalTickerComponents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Fundamentals) GetHistoricalTickerComponentsOk() (*[]FundamentalsHistoricalTickerComponentsData, bool) {
+	if o == nil || o.HistoricalTickerComponents == nil {
+		return nil, false
+	}
+	return o.HistoricalTickerComponents, true
+}
+
+// HasHistoricalTickerComponents returns a boolean if a field has been set.
+func (o *Fundamentals) HasHistoricalTickerComponents() bool {
+	if o != nil && o.HistoricalTickerComponents != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHistoricalTickerComponents gets a reference to the given []FundamentalsHistoricalTickerComponentsData and assigns it to the HistoricalTickerComponents field.
+func (o *Fundamentals) SetHistoricalTickerComponents(v []FundamentalsHistoricalTickerComponentsData) {
+	o.HistoricalTickerComponents = &v
 }
 
 // GetHighlights returns the Highlights field value if set, zero value otherwise.
@@ -468,6 +534,12 @@ func (o Fundamentals) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.General != nil {
 		toSerialize["General"] = o.General
+	}
+	if o.Components != nil {
+		toSerialize["Components"] = o.Components
+	}
+	if o.HistoricalTickerComponents != nil {
+		toSerialize["HistoricalTickerComponents"] = o.HistoricalTickerComponents
 	}
 	if o.Highlights != nil {
 		toSerialize["Highlights"] = o.Highlights
