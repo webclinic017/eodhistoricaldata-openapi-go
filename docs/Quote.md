@@ -4,13 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Code** | Pointer to **string** |  | [optional] 
+**Timestamp** | Pointer to **int64** |  | [optional] 
+**Gmtoffset** | Pointer to **int32** |  | [optional] 
 **Date** | Pointer to **string** |  | [optional] 
 **Open** | Pointer to **float64** |  | [optional] 
 **High** | Pointer to **float64** |  | [optional] 
 **Low** | Pointer to **float64** |  | [optional] 
 **Close** | Pointer to **float64** |  | [optional] 
 **AdjustedClose** | Pointer to **float64** |  | [optional] 
+**PreviousClose** | Pointer to **float64** |  | [optional] 
 **Volume** | Pointer to **int64** |  | [optional] 
+**Change** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -30,6 +35,81 @@ will change when the set of required properties is changed
 NewQuoteWithDefaults instantiates a new Quote object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCode
+
+`func (o *Quote) GetCode() string`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *Quote) GetCodeOk() (*string, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *Quote) SetCode(v string)`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *Quote) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### GetTimestamp
+
+`func (o *Quote) GetTimestamp() int64`
+
+GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
+
+### GetTimestampOk
+
+`func (o *Quote) GetTimestampOk() (*int64, bool)`
+
+GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestamp
+
+`func (o *Quote) SetTimestamp(v int64)`
+
+SetTimestamp sets Timestamp field to given value.
+
+### HasTimestamp
+
+`func (o *Quote) HasTimestamp() bool`
+
+HasTimestamp returns a boolean if a field has been set.
+
+### GetGmtoffset
+
+`func (o *Quote) GetGmtoffset() int32`
+
+GetGmtoffset returns the Gmtoffset field if non-nil, zero value otherwise.
+
+### GetGmtoffsetOk
+
+`func (o *Quote) GetGmtoffsetOk() (*int32, bool)`
+
+GetGmtoffsetOk returns a tuple with the Gmtoffset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGmtoffset
+
+`func (o *Quote) SetGmtoffset(v int32)`
+
+SetGmtoffset sets Gmtoffset field to given value.
+
+### HasGmtoffset
+
+`func (o *Quote) HasGmtoffset() bool`
+
+HasGmtoffset returns a boolean if a field has been set.
 
 ### GetDate
 
@@ -181,6 +261,31 @@ SetAdjustedClose sets AdjustedClose field to given value.
 
 HasAdjustedClose returns a boolean if a field has been set.
 
+### GetPreviousClose
+
+`func (o *Quote) GetPreviousClose() float64`
+
+GetPreviousClose returns the PreviousClose field if non-nil, zero value otherwise.
+
+### GetPreviousCloseOk
+
+`func (o *Quote) GetPreviousCloseOk() (*float64, bool)`
+
+GetPreviousCloseOk returns a tuple with the PreviousClose field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviousClose
+
+`func (o *Quote) SetPreviousClose(v float64)`
+
+SetPreviousClose sets PreviousClose field to given value.
+
+### HasPreviousClose
+
+`func (o *Quote) HasPreviousClose() bool`
+
+HasPreviousClose returns a boolean if a field has been set.
+
 ### GetVolume
 
 `func (o *Quote) GetVolume() int64`
@@ -205,6 +310,31 @@ SetVolume sets Volume field to given value.
 `func (o *Quote) HasVolume() bool`
 
 HasVolume returns a boolean if a field has been set.
+
+### GetChange
+
+`func (o *Quote) GetChange() float32`
+
+GetChange returns the Change field if non-nil, zero value otherwise.
+
+### GetChangeOk
+
+`func (o *Quote) GetChangeOk() (*float32, bool)`
+
+GetChangeOk returns a tuple with the Change field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChange
+
+`func (o *Quote) SetChange(v float32)`
+
+SetChange sets Change field to given value.
+
+### HasChange
+
+`func (o *Quote) HasChange() bool`
+
+HasChange returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

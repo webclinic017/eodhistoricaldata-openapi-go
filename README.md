@@ -80,14 +80,21 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CompaniesApi* | [**ListBulkFundamentals**](docs/CompaniesApi.md#listbulkfundamentals) | **Get** /bulk-fundamentals/{exchange} | 
 *CompaniesApi* | [**ListFundamentals**](docs/CompaniesApi.md#listfundamentals) | **Get** /fundamentals/{ticker} | 
+*DividendsApi* | [**ListDividends**](docs/DividendsApi.md#listdividends) | **Get** /div/{ticker} | 
 *ExchangesApi* | [**ListExchangeTickers**](docs/ExchangesApi.md#listexchangetickers) | **Get** /exchange-symbol-list | 
 *ExchangesApi* | [**ListExchanges**](docs/ExchangesApi.md#listexchanges) | **Get** /exchanges-list | 
+*MacroIndicatorApi* | [**ListMacroIndicator**](docs/MacroIndicatorApi.md#listmacroindicator) | **Get** /macro-indicator/{country} | 
 *NewsApi* | [**ListNews**](docs/NewsApi.md#listnews) | **Get** /news | 
-*QuotesApi* | [**ReadQuotes**](docs/QuotesApi.md#readquotes) | **Get** /eod/{ticker} | 
+*QuotesApi* | [**ListHistoryIntradayQuotes**](docs/QuotesApi.md#listhistoryintradayquotes) | **Get** /intraday/{ticker} | 
+*QuotesApi* | [**ListHistoryQuotes**](docs/QuotesApi.md#listhistoryquotes) | **Get** /eod/{ticker} | 
+*QuotesApi* | [**ListRealtimeQuotes**](docs/QuotesApi.md#listrealtimequotes) | **Get** /real-time/{ticker} | 
+*QuotesApi* | [**ListShortsQuotes**](docs/QuotesApi.md#listshortsquotes) | **Get** /shorts/{ticker} | 
+*QuotesApi* | [**ListSplitsQuotes**](docs/QuotesApi.md#listsplitsquotes) | **Get** /splits/{ticker} | 
 
 
 ## Documentation For Models
 
+ - [Dividend](docs/Dividend.md)
  - [Exchange](docs/Exchange.md)
  - [ExchangeTicker](docs/ExchangeTicker.md)
  - [Fundamentals](docs/Fundamentals.md)
@@ -117,8 +124,11 @@ Class | Method | HTTP request | Description
  - [FundamentalsSplitsDividendsNumberDividendsByYear](docs/FundamentalsSplitsDividendsNumberDividendsByYear.md)
  - [FundamentalsTechnicals](docs/FundamentalsTechnicals.md)
  - [FundamentalsValuation](docs/FundamentalsValuation.md)
+ - [MacroIndicator](docs/MacroIndicator.md)
  - [New](docs/New.md)
  - [Quote](docs/Quote.md)
+ - [ShortsQuote](docs/ShortsQuote.md)
+ - [SplitsQuote](docs/SplitsQuote.md)
 
 
 ## Documentation For Authorization
