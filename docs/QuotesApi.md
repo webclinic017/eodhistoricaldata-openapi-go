@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -92,7 +92,7 @@ No authorization required
 
 ## ListHistoryQuotes
 
-> []Quote ListHistoryQuotes(ctx, ticker).Fmt(fmt).Order(order).Execute()
+> []Quote ListHistoryQuotes(ctx, ticker).G(g).Fmt(fmt).Filter(filter).Order(order).From(from).To(to).Execute()
 
 
 
@@ -112,12 +112,16 @@ import (
 
 func main() {
     ticker := "["EUR.FOREX","BZ","CL","CT","GC","HG","KC","MALTR","MZN","NG","NICKEL","PA","PL","SB","SI","ZC"]" // string | string ticker (name or id) of the historyquotes
+    g := "["d","w","m"]" // string | string g (name or id) of the historyquotes
     fmt := "["json","csv"]" // string | string fmt (name or id) of the historyquotes
+    filter := "["last_close"]" // string | string filter (name or id) of the historyquotes
     order := "["d"]" // string | string order (name or id) of the historyquotes
+    from := "["2021-03-01"]" // string | string from (name or id) of the historyquotes
+    to := "["2021-03-10"]" // string | string to (name or id) of the historyquotes
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.QuotesApi.ListHistoryQuotes(context.Background(), ticker).Fmt(fmt).Order(order).Execute()
+    resp, r, err := api_client.QuotesApi.ListHistoryQuotes(context.Background(), ticker).G(g).Fmt(fmt).Filter(filter).Order(order).From(from).To(to).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QuotesApi.ListHistoryQuotes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -143,8 +147,12 @@ Other parameters are passed through a pointer to a apiListHistoryQuotesRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **g** | **string** | string g (name or id) of the historyquotes | 
  **fmt** | **string** | string fmt (name or id) of the historyquotes | 
+ **filter** | **string** | string filter (name or id) of the historyquotes | 
  **order** | **string** | string order (name or id) of the historyquotes | 
+ **from** | **string** | string from (name or id) of the historyquotes | 
+ **to** | **string** | string to (name or id) of the historyquotes | 
 
 ### Return type
 
@@ -152,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -230,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -302,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -374,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -78,10 +78,12 @@ All URIs are relative to *https://eodhistoricaldata.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BondsApi* | [**ReadBondFundamentals**](docs/BondsApi.md#readbondfundamentals) | **Get** /bond-fundamentals/{bond} | 
 *CompaniesApi* | [**ListBulkFundamentals**](docs/CompaniesApi.md#listbulkfundamentals) | **Get** /bulk-fundamentals/{exchange} | 
-*CompaniesApi* | [**ListFundamentals**](docs/CompaniesApi.md#listfundamentals) | **Get** /fundamentals/{ticker} | 
+*CompaniesApi* | [**ReadFundamentals**](docs/CompaniesApi.md#readfundamentals) | **Get** /fundamentals/{ticker} | 
 *DividendsApi* | [**ListDividends**](docs/DividendsApi.md#listdividends) | **Get** /div/{ticker} | 
-*ExchangesApi* | [**ListExchangeTickers**](docs/ExchangesApi.md#listexchangetickers) | **Get** /exchange-symbol-list | 
+*ExchangesApi* | [**ListExchangeDetails**](docs/ExchangesApi.md#listexchangedetails) | **Get** /exchange-details/{exchange} | 
+*ExchangesApi* | [**ListExchangeTickers**](docs/ExchangesApi.md#listexchangetickers) | **Get** /exchange-symbol-list/{exchange} | 
 *ExchangesApi* | [**ListExchanges**](docs/ExchangesApi.md#listexchanges) | **Get** /exchanges-list | 
 *MacroIndicatorApi* | [**ListMacroIndicator**](docs/MacroIndicatorApi.md#listmacroindicator) | **Get** /macro-indicator/{country} | 
 *NewsApi* | [**ListNews**](docs/NewsApi.md#listnews) | **Get** /news | 
@@ -94,8 +96,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [BondFundamentals](docs/BondFundamentals.md)
+ - [BondFundamentalsClassification](docs/BondFundamentalsClassification.md)
+ - [BondFundamentalsIssueData](docs/BondFundamentalsIssueData.md)
+ - [BondFundamentalsRating](docs/BondFundamentalsRating.md)
  - [Dividend](docs/Dividend.md)
  - [Exchange](docs/Exchange.md)
+ - [ExchangeDetails](docs/ExchangeDetails.md)
+ - [ExchangeDetailsExchangeHolidays](docs/ExchangeDetailsExchangeHolidays.md)
+ - [ExchangeDetailsTradingHours](docs/ExchangeDetailsTradingHours.md)
  - [ExchangeTicker](docs/ExchangeTicker.md)
  - [Fundamentals](docs/Fundamentals.md)
  - [FundamentalsAnalystRatings](docs/FundamentalsAnalystRatings.md)
@@ -135,13 +144,13 @@ Class | Method | HTTP request | Description
 
 
 
-### api_key
+### ApiKeyAuth
 
 - **Type**: API key
-- **API key parameter name**: api_key
+- **API key parameter name**: api_token
 - **Location**: URL query string
 
-Note, each API key must be added to a map of `map[string]APIKey` where the key is: api_key and passed in as the auth context for each request.
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: api_token and passed in as the auth context for each request.
 
 
 ## Documentation for Utility Methods

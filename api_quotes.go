@@ -132,6 +132,20 @@ func (a *QuotesApiService) ListHistoryIntradayQuotesExecute(r ApiListHistoryIntr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -173,16 +187,36 @@ type ApiListHistoryQuotesRequest struct {
 	ctx        _context.Context
 	ApiService *QuotesApiService
 	ticker     string
+	g          *string
 	fmt        *string
+	filter     *string
 	order      *string
+	from       *string
+	to         *string
 }
 
+func (r ApiListHistoryQuotesRequest) G(g string) ApiListHistoryQuotesRequest {
+	r.g = &g
+	return r
+}
 func (r ApiListHistoryQuotesRequest) Fmt(fmt string) ApiListHistoryQuotesRequest {
 	r.fmt = &fmt
 	return r
 }
+func (r ApiListHistoryQuotesRequest) Filter(filter string) ApiListHistoryQuotesRequest {
+	r.filter = &filter
+	return r
+}
 func (r ApiListHistoryQuotesRequest) Order(order string) ApiListHistoryQuotesRequest {
 	r.order = &order
+	return r
+}
+func (r ApiListHistoryQuotesRequest) From(from string) ApiListHistoryQuotesRequest {
+	r.from = &from
+	return r
+}
+func (r ApiListHistoryQuotesRequest) To(to string) ApiListHistoryQuotesRequest {
+	r.to = &to
 	return r
 }
 
@@ -230,15 +264,31 @@ func (a *QuotesApiService) ListHistoryQuotesExecute(r ApiListHistoryQuotesReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
+	if r.g == nil {
+		return localVarReturnValue, nil, reportError("g is required and must be specified")
+	}
 	if r.fmt == nil {
 		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
+	}
+	if r.filter == nil {
+		return localVarReturnValue, nil, reportError("filter is required and must be specified")
 	}
 	if r.order == nil {
 		return localVarReturnValue, nil, reportError("order is required and must be specified")
 	}
+	if r.from == nil {
+		return localVarReturnValue, nil, reportError("from is required and must be specified")
+	}
+	if r.to == nil {
+		return localVarReturnValue, nil, reportError("to is required and must be specified")
+	}
 
+	localVarQueryParams.Add("g", parameterToString(*r.g, ""))
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
 	localVarQueryParams.Add("order", parameterToString(*r.order, ""))
+	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -255,6 +305,20 @@ func (a *QuotesApiService) ListHistoryQuotesExecute(r ApiListHistoryQuotesReques
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -398,6 +462,20 @@ func (a *QuotesApiService) ListRealtimeQuotesExecute(r ApiListRealtimeQuotesRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -513,6 +591,20 @@ func (a *QuotesApiService) ListShortsQuotesExecute(r ApiListShortsQuotesRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -627,6 +719,20 @@ func (a *QuotesApiService) ListSplitsQuotesExecute(r ApiListSplitsQuotesRequest)
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {

@@ -16,6 +16,7 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
+	"strings"
 )
 
 // Linger please
@@ -23,102 +24,70 @@ var (
 	_ _context.Context
 )
 
-// NewsApiService NewsApi service
-type NewsApiService service
+// BondsApiService BondsApi service
+type BondsApiService service
 
-type ApiListNewsRequest struct {
+type ApiReadBondFundamentalsRequest struct {
 	ctx        _context.Context
-	ApiService *NewsApiService
-	s          *string
-	from       *string
-	to         *string
-	limit      *string
-	offset     *string
+	ApiService *BondsApiService
+	bond       string
+	fmt        *string
 }
 
-func (r ApiListNewsRequest) S(s string) ApiListNewsRequest {
-	r.s = &s
-	return r
-}
-func (r ApiListNewsRequest) From(from string) ApiListNewsRequest {
-	r.from = &from
-	return r
-}
-func (r ApiListNewsRequest) To(to string) ApiListNewsRequest {
-	r.to = &to
-	return r
-}
-func (r ApiListNewsRequest) Limit(limit string) ApiListNewsRequest {
-	r.limit = &limit
-	return r
-}
-func (r ApiListNewsRequest) Offset(offset string) ApiListNewsRequest {
-	r.offset = &offset
+func (r ApiReadBondFundamentalsRequest) Fmt(fmt string) ApiReadBondFundamentalsRequest {
+	r.fmt = &fmt
 	return r
 }
 
-func (r ApiListNewsRequest) Execute() ([]Quote, *_nethttp.Response, error) {
-	return r.ApiService.ListNewsExecute(r)
+func (r ApiReadBondFundamentalsRequest) Execute() (BondFundamentals, *_nethttp.Response, error) {
+	return r.ApiService.ReadBondFundamentalsExecute(r)
 }
 
 /*
- * ListNews Method for ListNews
- * List properties of news
+ * ReadBondFundamentals Method for ReadBondFundamentals
+ * Read properties of bondfundamentals
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiListNewsRequest
+ * @param bond string bond (name or id) of the bondfundamentals
+ * @return ApiReadBondFundamentalsRequest
  */
-func (a *NewsApiService) ListNews(ctx _context.Context) ApiListNewsRequest {
-	return ApiListNewsRequest{
+func (a *BondsApiService) ReadBondFundamentals(ctx _context.Context, bond string) ApiReadBondFundamentalsRequest {
+	return ApiReadBondFundamentalsRequest{
 		ApiService: a,
 		ctx:        ctx,
+		bond:       bond,
 	}
 }
 
 /*
  * Execute executes the request
- * @return []Quote
+ * @return BondFundamentals
  */
-func (a *NewsApiService) ListNewsExecute(r ApiListNewsRequest) ([]Quote, *_nethttp.Response, error) {
+func (a *BondsApiService) ReadBondFundamentalsExecute(r ApiReadBondFundamentalsRequest) (BondFundamentals, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Quote
+		localVarReturnValue  BondFundamentals
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsApiService.ListNews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BondsApiService.ReadBondFundamentals")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/news"
+	localVarPath := localBasePath + "/bond-fundamentals/{bond}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bond"+"}", _neturl.PathEscape(parameterToString(r.bond, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.s == nil {
-		return localVarReturnValue, nil, reportError("s is required and must be specified")
-	}
-	if r.from == nil {
-		return localVarReturnValue, nil, reportError("from is required and must be specified")
-	}
-	if r.to == nil {
-		return localVarReturnValue, nil, reportError("to is required and must be specified")
-	}
-	if r.limit == nil {
-		return localVarReturnValue, nil, reportError("limit is required and must be specified")
-	}
-	if r.offset == nil {
-		return localVarReturnValue, nil, reportError("offset is required and must be specified")
+	if r.fmt == nil {
+		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
 	}
 
-	localVarQueryParams.Add("s", parameterToString(*r.s, ""))
-	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
-	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
-	localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

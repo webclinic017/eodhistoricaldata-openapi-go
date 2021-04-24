@@ -132,6 +132,20 @@ func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundament
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -169,31 +183,31 @@ func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundament
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListFundamentalsRequest struct {
+type ApiReadFundamentalsRequest struct {
 	ctx        _context.Context
 	ApiService *CompaniesApiService
 	ticker     string
 	filter     *string
 }
 
-func (r ApiListFundamentalsRequest) Filter(filter string) ApiListFundamentalsRequest {
+func (r ApiReadFundamentalsRequest) Filter(filter string) ApiReadFundamentalsRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListFundamentalsRequest) Execute() (Fundamentals, *_nethttp.Response, error) {
-	return r.ApiService.ListFundamentalsExecute(r)
+func (r ApiReadFundamentalsRequest) Execute() (Fundamentals, *_nethttp.Response, error) {
+	return r.ApiService.ReadFundamentalsExecute(r)
 }
 
 /*
- * ListFundamentals Method for ListFundamentals
- * List properties of fundamentals
+ * ReadFundamentals Method for ReadFundamentals
+ * Read properties of fundamentals
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ticker string ticker (name or id) of the fundamentals
- * @return ApiListFundamentalsRequest
+ * @return ApiReadFundamentalsRequest
  */
-func (a *CompaniesApiService) ListFundamentals(ctx _context.Context, ticker string) ApiListFundamentalsRequest {
-	return ApiListFundamentalsRequest{
+func (a *CompaniesApiService) ReadFundamentals(ctx _context.Context, ticker string) ApiReadFundamentalsRequest {
+	return ApiReadFundamentalsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		ticker:     ticker,
@@ -204,7 +218,7 @@ func (a *CompaniesApiService) ListFundamentals(ctx _context.Context, ticker stri
  * Execute executes the request
  * @return Fundamentals
  */
-func (a *CompaniesApiService) ListFundamentalsExecute(r ApiListFundamentalsRequest) (Fundamentals, *_nethttp.Response, error) {
+func (a *CompaniesApiService) ReadFundamentalsExecute(r ApiReadFundamentalsRequest) (Fundamentals, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -214,7 +228,7 @@ func (a *CompaniesApiService) ListFundamentalsExecute(r ApiListFundamentalsReque
 		localVarReturnValue  Fundamentals
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.ListFundamentals")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompaniesApiService.ReadFundamentals")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -246,6 +260,20 @@ func (a *CompaniesApiService) ListFundamentalsExecute(r ApiListFundamentalsReque
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {

@@ -5,7 +5,7 @@ All URIs are relative to *https://eodhistoricaldata.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ListBulkFundamentals**](CompaniesApi.md#ListBulkFundamentals) | **Get** /bulk-fundamentals/{exchange} | 
-[**ListFundamentals**](CompaniesApi.md#ListFundamentals) | **Get** /fundamentals/{ticker} | 
+[**ReadFundamentals**](CompaniesApi.md#ReadFundamentals) | **Get** /fundamentals/{ticker} | 
 
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -87,9 +87,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListFundamentals
+## ReadFundamentals
 
-> Fundamentals ListFundamentals(ctx, ticker).Filter(filter).Execute()
+> Fundamentals ReadFundamentals(ctx, ticker).Filter(filter).Execute()
 
 
 
@@ -113,13 +113,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CompaniesApi.ListFundamentals(context.Background(), ticker).Filter(filter).Execute()
+    resp, r, err := api_client.CompaniesApi.ReadFundamentals(context.Background(), ticker).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CompaniesApi.ListFundamentals``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CompaniesApi.ReadFundamentals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListFundamentals`: Fundamentals
-    fmt.Fprintf(os.Stdout, "Response from `CompaniesApi.ListFundamentals`: %v\n", resp)
+    // response from `ReadFundamentals`: Fundamentals
+    fmt.Fprintf(os.Stdout, "Response from `CompaniesApi.ReadFundamentals`: %v\n", resp)
 }
 ```
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListFundamentalsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiReadFundamentalsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
