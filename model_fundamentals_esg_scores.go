@@ -16,18 +16,18 @@ import (
 
 // FundamentalsESGScores struct for FundamentalsESGScores
 type FundamentalsESGScores struct {
-	Disclaimer                 *string                                       `json:"Disclaimer,omitempty"`
-	RatingDate                 *string                                       `json:"RatingDate,omitempty"`
-	TotalEsg                   *float32                                      `json:"TotalEsg,omitempty"`
-	TotalEsgPercentile         *float32                                      `json:"TotalEsgPercentile,omitempty"`
-	EnvironmentScore           *float32                                      `json:"EnvironmentScore,omitempty"`
-	EnvironmentScorePercentile *float32                                      `json:"EnvironmentScorePercentile,omitempty"`
-	SocialScore                *float32                                      `json:"SocialScore,omitempty"`
-	SocialScorePercentile      *float32                                      `json:"SocialScorePercentile,omitempty"`
-	GovernanceScore            *float32                                      `json:"GovernanceScore,omitempty"`
-	GovernanceScorePercentile  *float32                                      `json:"GovernanceScorePercentile,omitempty"`
-	ControversyLevel           *float32                                      `json:"ControversyLevel,omitempty"`
-	ActivitiesInvolvement      *[]FundamentalsESGScoresActivitiesInvolvement `json:"ActivitiesInvolvement,omitempty"`
+	Disclaimer                 *string                                                `json:"Disclaimer,omitempty"`
+	RatingDate                 *string                                                `json:"RatingDate,omitempty"`
+	TotalEsg                   *float32                                               `json:"TotalEsg,omitempty"`
+	TotalEsgPercentile         *float32                                               `json:"TotalEsgPercentile,omitempty"`
+	EnvironmentScore           *float32                                               `json:"EnvironmentScore,omitempty"`
+	EnvironmentScorePercentile *float32                                               `json:"EnvironmentScorePercentile,omitempty"`
+	SocialScore                *float32                                               `json:"SocialScore,omitempty"`
+	SocialScorePercentile      *float32                                               `json:"SocialScorePercentile,omitempty"`
+	GovernanceScore            *float32                                               `json:"GovernanceScore,omitempty"`
+	GovernanceScorePercentile  *float32                                               `json:"GovernanceScorePercentile,omitempty"`
+	ControversyLevel           *float32                                               `json:"ControversyLevel,omitempty"`
+	ActivitiesInvolvement      *map[string]FundamentalsESGScoresActivitiesInvolvement `json:"ActivitiesInvolvement,omitempty"`
 }
 
 // NewFundamentalsESGScores instantiates a new FundamentalsESGScores object
@@ -400,9 +400,9 @@ func (o *FundamentalsESGScores) SetControversyLevel(v float32) {
 }
 
 // GetActivitiesInvolvement returns the ActivitiesInvolvement field value if set, zero value otherwise.
-func (o *FundamentalsESGScores) GetActivitiesInvolvement() []FundamentalsESGScoresActivitiesInvolvement {
+func (o *FundamentalsESGScores) GetActivitiesInvolvement() map[string]FundamentalsESGScoresActivitiesInvolvement {
 	if o == nil || o.ActivitiesInvolvement == nil {
-		var ret []FundamentalsESGScoresActivitiesInvolvement
+		var ret map[string]FundamentalsESGScoresActivitiesInvolvement
 		return ret
 	}
 	return *o.ActivitiesInvolvement
@@ -410,7 +410,7 @@ func (o *FundamentalsESGScores) GetActivitiesInvolvement() []FundamentalsESGScor
 
 // GetActivitiesInvolvementOk returns a tuple with the ActivitiesInvolvement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsESGScores) GetActivitiesInvolvementOk() (*[]FundamentalsESGScoresActivitiesInvolvement, bool) {
+func (o *FundamentalsESGScores) GetActivitiesInvolvementOk() (*map[string]FundamentalsESGScoresActivitiesInvolvement, bool) {
 	if o == nil || o.ActivitiesInvolvement == nil {
 		return nil, false
 	}
@@ -426,8 +426,8 @@ func (o *FundamentalsESGScores) HasActivitiesInvolvement() bool {
 	return false
 }
 
-// SetActivitiesInvolvement gets a reference to the given []FundamentalsESGScoresActivitiesInvolvement and assigns it to the ActivitiesInvolvement field.
-func (o *FundamentalsESGScores) SetActivitiesInvolvement(v []FundamentalsESGScoresActivitiesInvolvement) {
+// SetActivitiesInvolvement gets a reference to the given map[string]FundamentalsESGScoresActivitiesInvolvement and assigns it to the ActivitiesInvolvement field.
+func (o *FundamentalsESGScores) SetActivitiesInvolvement(v map[string]FundamentalsESGScoresActivitiesInvolvement) {
 	o.ActivitiesInvolvement = &v
 }
 

@@ -16,8 +16,8 @@ import (
 
 // FundamentalsHolders struct for FundamentalsHolders
 type FundamentalsHolders struct {
-	Institutions *[]FundamentalsHoldersData `json:"Institutions,omitempty"`
-	Funds        *[]FundamentalsHoldersData `json:"Funds,omitempty"`
+	Institutions *map[string]FundamentalsHoldersData `json:"Institutions,omitempty"`
+	Funds        *map[string]FundamentalsHoldersData `json:"Funds,omitempty"`
 }
 
 // NewFundamentalsHolders instantiates a new FundamentalsHolders object
@@ -38,9 +38,9 @@ func NewFundamentalsHoldersWithDefaults() *FundamentalsHolders {
 }
 
 // GetInstitutions returns the Institutions field value if set, zero value otherwise.
-func (o *FundamentalsHolders) GetInstitutions() []FundamentalsHoldersData {
+func (o *FundamentalsHolders) GetInstitutions() map[string]FundamentalsHoldersData {
 	if o == nil || o.Institutions == nil {
-		var ret []FundamentalsHoldersData
+		var ret map[string]FundamentalsHoldersData
 		return ret
 	}
 	return *o.Institutions
@@ -48,7 +48,7 @@ func (o *FundamentalsHolders) GetInstitutions() []FundamentalsHoldersData {
 
 // GetInstitutionsOk returns a tuple with the Institutions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsHolders) GetInstitutionsOk() (*[]FundamentalsHoldersData, bool) {
+func (o *FundamentalsHolders) GetInstitutionsOk() (*map[string]FundamentalsHoldersData, bool) {
 	if o == nil || o.Institutions == nil {
 		return nil, false
 	}
@@ -64,15 +64,15 @@ func (o *FundamentalsHolders) HasInstitutions() bool {
 	return false
 }
 
-// SetInstitutions gets a reference to the given []FundamentalsHoldersData and assigns it to the Institutions field.
-func (o *FundamentalsHolders) SetInstitutions(v []FundamentalsHoldersData) {
+// SetInstitutions gets a reference to the given map[string]FundamentalsHoldersData and assigns it to the Institutions field.
+func (o *FundamentalsHolders) SetInstitutions(v map[string]FundamentalsHoldersData) {
 	o.Institutions = &v
 }
 
 // GetFunds returns the Funds field value if set, zero value otherwise.
-func (o *FundamentalsHolders) GetFunds() []FundamentalsHoldersData {
+func (o *FundamentalsHolders) GetFunds() map[string]FundamentalsHoldersData {
 	if o == nil || o.Funds == nil {
-		var ret []FundamentalsHoldersData
+		var ret map[string]FundamentalsHoldersData
 		return ret
 	}
 	return *o.Funds
@@ -80,7 +80,7 @@ func (o *FundamentalsHolders) GetFunds() []FundamentalsHoldersData {
 
 // GetFundsOk returns a tuple with the Funds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsHolders) GetFundsOk() (*[]FundamentalsHoldersData, bool) {
+func (o *FundamentalsHolders) GetFundsOk() (*map[string]FundamentalsHoldersData, bool) {
 	if o == nil || o.Funds == nil {
 		return nil, false
 	}
@@ -96,8 +96,8 @@ func (o *FundamentalsHolders) HasFunds() bool {
 	return false
 }
 
-// SetFunds gets a reference to the given []FundamentalsHoldersData and assigns it to the Funds field.
-func (o *FundamentalsHolders) SetFunds(v []FundamentalsHoldersData) {
+// SetFunds gets a reference to the given map[string]FundamentalsHoldersData and assigns it to the Funds field.
+func (o *FundamentalsHolders) SetFunds(v map[string]FundamentalsHoldersData) {
 	o.Funds = &v
 }
 

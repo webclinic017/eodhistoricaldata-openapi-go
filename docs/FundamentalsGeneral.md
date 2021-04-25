@@ -31,8 +31,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to **string** |  | [optional] 
 **AddressData** | Pointer to [**FundamentalsGeneralAddressData**](FundamentalsGeneralAddressData.md) |  | [optional] 
-**Listings** | Pointer to [**[]FundamentalsGeneralListings**](FundamentalsGeneralListings.md) |  | [optional] 
-**Officers** | Pointer to [**[]FundamentalsGeneralOfficers**](FundamentalsGeneralOfficers.md) |  | [optional] 
+**Listings** | Pointer to [**map[string]FundamentalsGeneralListings**](FundamentalsGeneralListings.md) |  | [optional] 
+**Officers** | Pointer to [**map[string]FundamentalsGeneralOfficers**](FundamentalsGeneralOfficers.md) |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
 **WebURL** | Pointer to **string** |  | [optional] 
 **LogoURL** | Pointer to **string** |  | [optional] 
@@ -735,20 +735,20 @@ HasAddressData returns a boolean if a field has been set.
 
 ### GetListings
 
-`func (o *FundamentalsGeneral) GetListings() []FundamentalsGeneralListings`
+`func (o *FundamentalsGeneral) GetListings() map[string]FundamentalsGeneralListings`
 
 GetListings returns the Listings field if non-nil, zero value otherwise.
 
 ### GetListingsOk
 
-`func (o *FundamentalsGeneral) GetListingsOk() (*[]FundamentalsGeneralListings, bool)`
+`func (o *FundamentalsGeneral) GetListingsOk() (*map[string]FundamentalsGeneralListings, bool)`
 
 GetListingsOk returns a tuple with the Listings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetListings
 
-`func (o *FundamentalsGeneral) SetListings(v []FundamentalsGeneralListings)`
+`func (o *FundamentalsGeneral) SetListings(v map[string]FundamentalsGeneralListings)`
 
 SetListings sets Listings field to given value.
 
@@ -760,20 +760,20 @@ HasListings returns a boolean if a field has been set.
 
 ### GetOfficers
 
-`func (o *FundamentalsGeneral) GetOfficers() []FundamentalsGeneralOfficers`
+`func (o *FundamentalsGeneral) GetOfficers() map[string]FundamentalsGeneralOfficers`
 
 GetOfficers returns the Officers field if non-nil, zero value otherwise.
 
 ### GetOfficersOk
 
-`func (o *FundamentalsGeneral) GetOfficersOk() (*[]FundamentalsGeneralOfficers, bool)`
+`func (o *FundamentalsGeneral) GetOfficersOk() (*map[string]FundamentalsGeneralOfficers, bool)`
 
 GetOfficersOk returns a tuple with the Officers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOfficers
 
-`func (o *FundamentalsGeneral) SetOfficers(v []FundamentalsGeneralOfficers)`
+`func (o *FundamentalsGeneral) SetOfficers(v map[string]FundamentalsGeneralOfficers)`
 
 SetOfficers sets Officers field to given value.
 

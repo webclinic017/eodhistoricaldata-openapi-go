@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ExDividendDate** | Pointer to **string** |  | [optional] 
 **LastSplitFactor** | Pointer to **string** |  | [optional] 
 **LastSplitDate** | Pointer to **string** |  | [optional] 
-**NumberDividendsByYear** | Pointer to [**[]FundamentalsSplitsDividendsNumberDividendsByYear**](FundamentalsSplitsDividendsNumberDividendsByYear.md) |  | [optional] 
+**NumberDividendsByYear** | Pointer to [**map[string]FundamentalsSplitsDividendsNumberDividendsByYear**](FundamentalsSplitsDividendsNumberDividendsByYear.md) |  | [optional] 
 
 ## Methods
 
@@ -209,20 +209,20 @@ HasLastSplitDate returns a boolean if a field has been set.
 
 ### GetNumberDividendsByYear
 
-`func (o *FundamentalsSplitsDividends) GetNumberDividendsByYear() []FundamentalsSplitsDividendsNumberDividendsByYear`
+`func (o *FundamentalsSplitsDividends) GetNumberDividendsByYear() map[string]FundamentalsSplitsDividendsNumberDividendsByYear`
 
 GetNumberDividendsByYear returns the NumberDividendsByYear field if non-nil, zero value otherwise.
 
 ### GetNumberDividendsByYearOk
 
-`func (o *FundamentalsSplitsDividends) GetNumberDividendsByYearOk() (*[]FundamentalsSplitsDividendsNumberDividendsByYear, bool)`
+`func (o *FundamentalsSplitsDividends) GetNumberDividendsByYearOk() (*map[string]FundamentalsSplitsDividendsNumberDividendsByYear, bool)`
 
 GetNumberDividendsByYearOk returns a tuple with the NumberDividendsByYear field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumberDividendsByYear
 
-`func (o *FundamentalsSplitsDividends) SetNumberDividendsByYear(v []FundamentalsSplitsDividendsNumberDividendsByYear)`
+`func (o *FundamentalsSplitsDividends) SetNumberDividendsByYear(v map[string]FundamentalsSplitsDividendsNumberDividendsByYear)`
 
 SetNumberDividendsByYear sets NumberDividendsByYear field to given value.
 

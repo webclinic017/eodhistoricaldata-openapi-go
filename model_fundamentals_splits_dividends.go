@@ -16,14 +16,14 @@ import (
 
 // FundamentalsSplitsDividends struct for FundamentalsSplitsDividends
 type FundamentalsSplitsDividends struct {
-	ForwardAnnualDividendRate  *float64                                            `json:"ForwardAnnualDividendRate,omitempty"`
-	ForwardAnnualDividendYield *float64                                            `json:"ForwardAnnualDividendYield,omitempty"`
-	PayoutRatio                *float64                                            `json:"PayoutRatio,omitempty"`
-	DividendDate               *string                                             `json:"DividendDate,omitempty"`
-	ExDividendDate             *string                                             `json:"ExDividendDate,omitempty"`
-	LastSplitFactor            *string                                             `json:"LastSplitFactor,omitempty"`
-	LastSplitDate              *string                                             `json:"LastSplitDate,omitempty"`
-	NumberDividendsByYear      *[]FundamentalsSplitsDividendsNumberDividendsByYear `json:"NumberDividendsByYear,omitempty"`
+	ForwardAnnualDividendRate  *float64                                                     `json:"ForwardAnnualDividendRate,omitempty"`
+	ForwardAnnualDividendYield *float64                                                     `json:"ForwardAnnualDividendYield,omitempty"`
+	PayoutRatio                *float64                                                     `json:"PayoutRatio,omitempty"`
+	DividendDate               *string                                                      `json:"DividendDate,omitempty"`
+	ExDividendDate             *string                                                      `json:"ExDividendDate,omitempty"`
+	LastSplitFactor            *string                                                      `json:"LastSplitFactor,omitempty"`
+	LastSplitDate              *string                                                      `json:"LastSplitDate,omitempty"`
+	NumberDividendsByYear      *map[string]FundamentalsSplitsDividendsNumberDividendsByYear `json:"NumberDividendsByYear,omitempty"`
 }
 
 // NewFundamentalsSplitsDividends instantiates a new FundamentalsSplitsDividends object
@@ -268,9 +268,9 @@ func (o *FundamentalsSplitsDividends) SetLastSplitDate(v string) {
 }
 
 // GetNumberDividendsByYear returns the NumberDividendsByYear field value if set, zero value otherwise.
-func (o *FundamentalsSplitsDividends) GetNumberDividendsByYear() []FundamentalsSplitsDividendsNumberDividendsByYear {
+func (o *FundamentalsSplitsDividends) GetNumberDividendsByYear() map[string]FundamentalsSplitsDividendsNumberDividendsByYear {
 	if o == nil || o.NumberDividendsByYear == nil {
-		var ret []FundamentalsSplitsDividendsNumberDividendsByYear
+		var ret map[string]FundamentalsSplitsDividendsNumberDividendsByYear
 		return ret
 	}
 	return *o.NumberDividendsByYear
@@ -278,7 +278,7 @@ func (o *FundamentalsSplitsDividends) GetNumberDividendsByYear() []FundamentalsS
 
 // GetNumberDividendsByYearOk returns a tuple with the NumberDividendsByYear field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsSplitsDividends) GetNumberDividendsByYearOk() (*[]FundamentalsSplitsDividendsNumberDividendsByYear, bool) {
+func (o *FundamentalsSplitsDividends) GetNumberDividendsByYearOk() (*map[string]FundamentalsSplitsDividendsNumberDividendsByYear, bool) {
 	if o == nil || o.NumberDividendsByYear == nil {
 		return nil, false
 	}
@@ -294,8 +294,8 @@ func (o *FundamentalsSplitsDividends) HasNumberDividendsByYear() bool {
 	return false
 }
 
-// SetNumberDividendsByYear gets a reference to the given []FundamentalsSplitsDividendsNumberDividendsByYear and assigns it to the NumberDividendsByYear field.
-func (o *FundamentalsSplitsDividends) SetNumberDividendsByYear(v []FundamentalsSplitsDividendsNumberDividendsByYear) {
+// SetNumberDividendsByYear gets a reference to the given map[string]FundamentalsSplitsDividendsNumberDividendsByYear and assigns it to the NumberDividendsByYear field.
+func (o *FundamentalsSplitsDividends) SetNumberDividendsByYear(v map[string]FundamentalsSplitsDividendsNumberDividendsByYear) {
 	o.NumberDividendsByYear = &v
 }
 

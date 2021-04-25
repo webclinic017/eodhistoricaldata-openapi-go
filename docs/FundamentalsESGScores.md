@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **GovernanceScore** | Pointer to **float32** |  | [optional] 
 **GovernanceScorePercentile** | Pointer to **float32** |  | [optional] 
 **ControversyLevel** | Pointer to **float32** |  | [optional] 
-**ActivitiesInvolvement** | Pointer to [**[]FundamentalsESGScoresActivitiesInvolvement**](FundamentalsESGScoresActivitiesInvolvement.md) |  | [optional] 
+**ActivitiesInvolvement** | Pointer to [**map[string]FundamentalsESGScoresActivitiesInvolvement**](FundamentalsESGScoresActivitiesInvolvement.md) |  | [optional] 
 
 ## Methods
 
@@ -313,20 +313,20 @@ HasControversyLevel returns a boolean if a field has been set.
 
 ### GetActivitiesInvolvement
 
-`func (o *FundamentalsESGScores) GetActivitiesInvolvement() []FundamentalsESGScoresActivitiesInvolvement`
+`func (o *FundamentalsESGScores) GetActivitiesInvolvement() map[string]FundamentalsESGScoresActivitiesInvolvement`
 
 GetActivitiesInvolvement returns the ActivitiesInvolvement field if non-nil, zero value otherwise.
 
 ### GetActivitiesInvolvementOk
 
-`func (o *FundamentalsESGScores) GetActivitiesInvolvementOk() (*[]FundamentalsESGScoresActivitiesInvolvement, bool)`
+`func (o *FundamentalsESGScores) GetActivitiesInvolvementOk() (*map[string]FundamentalsESGScoresActivitiesInvolvement, bool)`
 
 GetActivitiesInvolvementOk returns a tuple with the ActivitiesInvolvement field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActivitiesInvolvement
 
-`func (o *FundamentalsESGScores) SetActivitiesInvolvement(v []FundamentalsESGScoresActivitiesInvolvement)`
+`func (o *FundamentalsESGScores) SetActivitiesInvolvement(v map[string]FundamentalsESGScoresActivitiesInvolvement)`
 
 SetActivitiesInvolvement sets ActivitiesInvolvement field to given value.
 

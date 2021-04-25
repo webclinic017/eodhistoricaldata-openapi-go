@@ -16,40 +16,40 @@ import (
 
 // FundamentalsGeneral struct for FundamentalsGeneral
 type FundamentalsGeneral struct {
-	Code                  *string                         `json:"Code,omitempty"`
-	Type                  *string                         `json:"Type,omitempty"`
-	Name                  *string                         `json:"Name,omitempty"`
-	Exchange              *string                         `json:"Exchange,omitempty"`
-	CurrencyCode          *string                         `json:"CurrencyCode,omitempty"`
-	CurrencyName          *string                         `json:"CurrencyName,omitempty"`
-	CurrencySymbol        *string                         `json:"CurrencySymbol,omitempty"`
-	CountryName           *string                         `json:"CountryName,omitempty"`
-	CountryISO            *string                         `json:"CountryISO,omitempty"`
-	ISIN                  *string                         `json:"ISIN,omitempty"`
-	CUSIP                 *string                         `json:"CUSIP,omitempty"`
-	CIK                   *string                         `json:"CIK,omitempty"`
-	EmployerIdNumber      *string                         `json:"EmployerIdNumber,omitempty"`
-	FiscalYearEnd         *string                         `json:"FiscalYearEnd,omitempty"`
-	IPODate               *string                         `json:"IPODate,omitempty"`
-	InternationalDomestic *string                         `json:"InternationalDomestic,omitempty"`
-	Sector                *string                         `json:"Sector,omitempty"`
-	Industry              *string                         `json:"Industry,omitempty"`
-	GicSector             *string                         `json:"GicSector,omitempty"`
-	GicGroup              *string                         `json:"GicGroup,omitempty"`
-	GicIndustry           *string                         `json:"GicIndustry,omitempty"`
-	GicSubIndustry        *string                         `json:"GicSubIndustry,omitempty"`
-	HomeCategory          *string                         `json:"HomeCategory,omitempty"`
-	IsDelisted            *bool                           `json:"IsDelisted,omitempty"`
-	Description           *string                         `json:"Description,omitempty"`
-	Address               *string                         `json:"Address,omitempty"`
-	AddressData           *FundamentalsGeneralAddressData `json:"AddressData,omitempty"`
-	Listings              *[]FundamentalsGeneralListings  `json:"Listings,omitempty"`
-	Officers              *[]FundamentalsGeneralOfficers  `json:"Officers,omitempty"`
-	Phone                 *string                         `json:"Phone,omitempty"`
-	WebURL                *string                         `json:"WebURL,omitempty"`
-	LogoURL               *string                         `json:"LogoURL,omitempty"`
-	FullTimeEmployees     *int64                          `json:"FullTimeEmployees,omitempty"`
-	UpdatedAt             *string                         `json:"UpdatedAt,omitempty"`
+	Code                  *string                                 `json:"Code,omitempty"`
+	Type                  *string                                 `json:"Type,omitempty"`
+	Name                  *string                                 `json:"Name,omitempty"`
+	Exchange              *string                                 `json:"Exchange,omitempty"`
+	CurrencyCode          *string                                 `json:"CurrencyCode,omitempty"`
+	CurrencyName          *string                                 `json:"CurrencyName,omitempty"`
+	CurrencySymbol        *string                                 `json:"CurrencySymbol,omitempty"`
+	CountryName           *string                                 `json:"CountryName,omitempty"`
+	CountryISO            *string                                 `json:"CountryISO,omitempty"`
+	ISIN                  *string                                 `json:"ISIN,omitempty"`
+	CUSIP                 *string                                 `json:"CUSIP,omitempty"`
+	CIK                   *string                                 `json:"CIK,omitempty"`
+	EmployerIdNumber      *string                                 `json:"EmployerIdNumber,omitempty"`
+	FiscalYearEnd         *string                                 `json:"FiscalYearEnd,omitempty"`
+	IPODate               *string                                 `json:"IPODate,omitempty"`
+	InternationalDomestic *string                                 `json:"InternationalDomestic,omitempty"`
+	Sector                *string                                 `json:"Sector,omitempty"`
+	Industry              *string                                 `json:"Industry,omitempty"`
+	GicSector             *string                                 `json:"GicSector,omitempty"`
+	GicGroup              *string                                 `json:"GicGroup,omitempty"`
+	GicIndustry           *string                                 `json:"GicIndustry,omitempty"`
+	GicSubIndustry        *string                                 `json:"GicSubIndustry,omitempty"`
+	HomeCategory          *string                                 `json:"HomeCategory,omitempty"`
+	IsDelisted            *bool                                   `json:"IsDelisted,omitempty"`
+	Description           *string                                 `json:"Description,omitempty"`
+	Address               *string                                 `json:"Address,omitempty"`
+	AddressData           *FundamentalsGeneralAddressData         `json:"AddressData,omitempty"`
+	Listings              *map[string]FundamentalsGeneralListings `json:"Listings,omitempty"`
+	Officers              *map[string]FundamentalsGeneralOfficers `json:"Officers,omitempty"`
+	Phone                 *string                                 `json:"Phone,omitempty"`
+	WebURL                *string                                 `json:"WebURL,omitempty"`
+	LogoURL               *string                                 `json:"LogoURL,omitempty"`
+	FullTimeEmployees     *int64                                  `json:"FullTimeEmployees,omitempty"`
+	UpdatedAt             *string                                 `json:"UpdatedAt,omitempty"`
 }
 
 // NewFundamentalsGeneral instantiates a new FundamentalsGeneral object
@@ -934,9 +934,9 @@ func (o *FundamentalsGeneral) SetAddressData(v FundamentalsGeneralAddressData) {
 }
 
 // GetListings returns the Listings field value if set, zero value otherwise.
-func (o *FundamentalsGeneral) GetListings() []FundamentalsGeneralListings {
+func (o *FundamentalsGeneral) GetListings() map[string]FundamentalsGeneralListings {
 	if o == nil || o.Listings == nil {
-		var ret []FundamentalsGeneralListings
+		var ret map[string]FundamentalsGeneralListings
 		return ret
 	}
 	return *o.Listings
@@ -944,7 +944,7 @@ func (o *FundamentalsGeneral) GetListings() []FundamentalsGeneralListings {
 
 // GetListingsOk returns a tuple with the Listings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsGeneral) GetListingsOk() (*[]FundamentalsGeneralListings, bool) {
+func (o *FundamentalsGeneral) GetListingsOk() (*map[string]FundamentalsGeneralListings, bool) {
 	if o == nil || o.Listings == nil {
 		return nil, false
 	}
@@ -960,15 +960,15 @@ func (o *FundamentalsGeneral) HasListings() bool {
 	return false
 }
 
-// SetListings gets a reference to the given []FundamentalsGeneralListings and assigns it to the Listings field.
-func (o *FundamentalsGeneral) SetListings(v []FundamentalsGeneralListings) {
+// SetListings gets a reference to the given map[string]FundamentalsGeneralListings and assigns it to the Listings field.
+func (o *FundamentalsGeneral) SetListings(v map[string]FundamentalsGeneralListings) {
 	o.Listings = &v
 }
 
 // GetOfficers returns the Officers field value if set, zero value otherwise.
-func (o *FundamentalsGeneral) GetOfficers() []FundamentalsGeneralOfficers {
+func (o *FundamentalsGeneral) GetOfficers() map[string]FundamentalsGeneralOfficers {
 	if o == nil || o.Officers == nil {
-		var ret []FundamentalsGeneralOfficers
+		var ret map[string]FundamentalsGeneralOfficers
 		return ret
 	}
 	return *o.Officers
@@ -976,7 +976,7 @@ func (o *FundamentalsGeneral) GetOfficers() []FundamentalsGeneralOfficers {
 
 // GetOfficersOk returns a tuple with the Officers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsGeneral) GetOfficersOk() (*[]FundamentalsGeneralOfficers, bool) {
+func (o *FundamentalsGeneral) GetOfficersOk() (*map[string]FundamentalsGeneralOfficers, bool) {
 	if o == nil || o.Officers == nil {
 		return nil, false
 	}
@@ -992,8 +992,8 @@ func (o *FundamentalsGeneral) HasOfficers() bool {
 	return false
 }
 
-// SetOfficers gets a reference to the given []FundamentalsGeneralOfficers and assigns it to the Officers field.
-func (o *FundamentalsGeneral) SetOfficers(v []FundamentalsGeneralOfficers) {
+// SetOfficers gets a reference to the given map[string]FundamentalsGeneralOfficers and assigns it to the Officers field.
+func (o *FundamentalsGeneral) SetOfficers(v map[string]FundamentalsGeneralOfficers) {
 	o.Officers = &v
 }
 

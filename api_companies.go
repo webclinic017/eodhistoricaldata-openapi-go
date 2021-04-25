@@ -104,17 +104,15 @@ func (a *CompaniesApiService) ListBulkFundamentalsExecute(r ApiListBulkFundament
 	if r.symbols == nil {
 		return localVarReturnValue, nil, reportError("symbols is required and must be specified")
 	}
-	if r.offset == nil {
-		return localVarReturnValue, nil, reportError("offset is required and must be specified")
-	}
-	if r.limit == nil {
-		return localVarReturnValue, nil, reportError("limit is required and must be specified")
-	}
 
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
 	localVarQueryParams.Add("symbols", parameterToString(*r.symbols, ""))
-	localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -239,11 +237,10 @@ func (a *CompaniesApiService) ReadFundamentalsExecute(r ApiReadFundamentalsReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.filter == nil {
-		return localVarReturnValue, nil, reportError("filter is required and must be specified")
-	}
 
-	localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
+	if r.filter != nil {
+		localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

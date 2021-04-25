@@ -16,8 +16,8 @@ import (
 
 // FundamentalsOutstandingShares struct for FundamentalsOutstandingShares
 type FundamentalsOutstandingShares struct {
-	Annual    *[]FundamentalsOutstandingSharesData `json:"annual,omitempty"`
-	Quarterly *[]FundamentalsOutstandingSharesData `json:"quarterly,omitempty"`
+	Annual    *map[string]FundamentalsOutstandingSharesData `json:"annual,omitempty"`
+	Quarterly *map[string]FundamentalsOutstandingSharesData `json:"quarterly,omitempty"`
 }
 
 // NewFundamentalsOutstandingShares instantiates a new FundamentalsOutstandingShares object
@@ -38,9 +38,9 @@ func NewFundamentalsOutstandingSharesWithDefaults() *FundamentalsOutstandingShar
 }
 
 // GetAnnual returns the Annual field value if set, zero value otherwise.
-func (o *FundamentalsOutstandingShares) GetAnnual() []FundamentalsOutstandingSharesData {
+func (o *FundamentalsOutstandingShares) GetAnnual() map[string]FundamentalsOutstandingSharesData {
 	if o == nil || o.Annual == nil {
-		var ret []FundamentalsOutstandingSharesData
+		var ret map[string]FundamentalsOutstandingSharesData
 		return ret
 	}
 	return *o.Annual
@@ -48,7 +48,7 @@ func (o *FundamentalsOutstandingShares) GetAnnual() []FundamentalsOutstandingSha
 
 // GetAnnualOk returns a tuple with the Annual field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsOutstandingShares) GetAnnualOk() (*[]FundamentalsOutstandingSharesData, bool) {
+func (o *FundamentalsOutstandingShares) GetAnnualOk() (*map[string]FundamentalsOutstandingSharesData, bool) {
 	if o == nil || o.Annual == nil {
 		return nil, false
 	}
@@ -64,15 +64,15 @@ func (o *FundamentalsOutstandingShares) HasAnnual() bool {
 	return false
 }
 
-// SetAnnual gets a reference to the given []FundamentalsOutstandingSharesData and assigns it to the Annual field.
-func (o *FundamentalsOutstandingShares) SetAnnual(v []FundamentalsOutstandingSharesData) {
+// SetAnnual gets a reference to the given map[string]FundamentalsOutstandingSharesData and assigns it to the Annual field.
+func (o *FundamentalsOutstandingShares) SetAnnual(v map[string]FundamentalsOutstandingSharesData) {
 	o.Annual = &v
 }
 
 // GetQuarterly returns the Quarterly field value if set, zero value otherwise.
-func (o *FundamentalsOutstandingShares) GetQuarterly() []FundamentalsOutstandingSharesData {
+func (o *FundamentalsOutstandingShares) GetQuarterly() map[string]FundamentalsOutstandingSharesData {
 	if o == nil || o.Quarterly == nil {
-		var ret []FundamentalsOutstandingSharesData
+		var ret map[string]FundamentalsOutstandingSharesData
 		return ret
 	}
 	return *o.Quarterly
@@ -80,7 +80,7 @@ func (o *FundamentalsOutstandingShares) GetQuarterly() []FundamentalsOutstanding
 
 // GetQuarterlyOk returns a tuple with the Quarterly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsOutstandingShares) GetQuarterlyOk() (*[]FundamentalsOutstandingSharesData, bool) {
+func (o *FundamentalsOutstandingShares) GetQuarterlyOk() (*map[string]FundamentalsOutstandingSharesData, bool) {
 	if o == nil || o.Quarterly == nil {
 		return nil, false
 	}
@@ -96,8 +96,8 @@ func (o *FundamentalsOutstandingShares) HasQuarterly() bool {
 	return false
 }
 
-// SetQuarterly gets a reference to the given []FundamentalsOutstandingSharesData and assigns it to the Quarterly field.
-func (o *FundamentalsOutstandingShares) SetQuarterly(v []FundamentalsOutstandingSharesData) {
+// SetQuarterly gets a reference to the given map[string]FundamentalsOutstandingSharesData and assigns it to the Quarterly field.
+func (o *FundamentalsOutstandingShares) SetQuarterly(v map[string]FundamentalsOutstandingSharesData) {
 	o.Quarterly = &v
 }
 

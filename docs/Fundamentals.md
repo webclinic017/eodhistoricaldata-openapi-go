@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **SplitsDividends** | Pointer to [**FundamentalsSplitsDividends**](FundamentalsSplitsDividends.md) |  | [optional] 
 **AnalystRatings** | Pointer to [**FundamentalsAnalystRatings**](FundamentalsAnalystRatings.md) |  | [optional] 
 **Holders** | Pointer to [**FundamentalsHolders**](FundamentalsHolders.md) |  | [optional] 
-**InsiderTransactions** | Pointer to [**[]FundamentalsInsiderTransactionsData**](FundamentalsInsiderTransactionsData.md) |  | [optional] 
+**InsiderTransactions** | Pointer to [**map[string]FundamentalsInsiderTransactionsData**](FundamentalsInsiderTransactionsData.md) |  | [optional] 
 **ESGScores** | Pointer to [**FundamentalsESGScores**](FundamentalsESGScores.md) |  | [optional] 
 **OutstandingShares** | Pointer to [**FundamentalsOutstandingShares**](FundamentalsOutstandingShares.md) |  | [optional] 
 **Earnings** | Pointer to [**FundamentalsEarnings**](FundamentalsEarnings.md) |  | [optional] 
@@ -291,20 +291,20 @@ HasHolders returns a boolean if a field has been set.
 
 ### GetInsiderTransactions
 
-`func (o *Fundamentals) GetInsiderTransactions() []FundamentalsInsiderTransactionsData`
+`func (o *Fundamentals) GetInsiderTransactions() map[string]FundamentalsInsiderTransactionsData`
 
 GetInsiderTransactions returns the InsiderTransactions field if non-nil, zero value otherwise.
 
 ### GetInsiderTransactionsOk
 
-`func (o *Fundamentals) GetInsiderTransactionsOk() (*[]FundamentalsInsiderTransactionsData, bool)`
+`func (o *Fundamentals) GetInsiderTransactionsOk() (*map[string]FundamentalsInsiderTransactionsData, bool)`
 
 GetInsiderTransactionsOk returns a tuple with the InsiderTransactions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInsiderTransactions
 
-`func (o *Fundamentals) SetInsiderTransactions(v []FundamentalsInsiderTransactionsData)`
+`func (o *Fundamentals) SetInsiderTransactions(v map[string]FundamentalsInsiderTransactionsData)`
 
 SetInsiderTransactions sets InsiderTransactions field to given value.
 

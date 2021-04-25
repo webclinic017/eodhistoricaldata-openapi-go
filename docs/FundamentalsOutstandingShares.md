@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Annual** | Pointer to [**[]FundamentalsOutstandingSharesData**](FundamentalsOutstandingSharesData.md) |  | [optional] 
-**Quarterly** | Pointer to [**[]FundamentalsOutstandingSharesData**](FundamentalsOutstandingSharesData.md) |  | [optional] 
+**Annual** | Pointer to [**map[string]FundamentalsOutstandingSharesData**](FundamentalsOutstandingSharesData.md) |  | [optional] 
+**Quarterly** | Pointer to [**map[string]FundamentalsOutstandingSharesData**](FundamentalsOutstandingSharesData.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAnnual
 
-`func (o *FundamentalsOutstandingShares) GetAnnual() []FundamentalsOutstandingSharesData`
+`func (o *FundamentalsOutstandingShares) GetAnnual() map[string]FundamentalsOutstandingSharesData`
 
 GetAnnual returns the Annual field if non-nil, zero value otherwise.
 
 ### GetAnnualOk
 
-`func (o *FundamentalsOutstandingShares) GetAnnualOk() (*[]FundamentalsOutstandingSharesData, bool)`
+`func (o *FundamentalsOutstandingShares) GetAnnualOk() (*map[string]FundamentalsOutstandingSharesData, bool)`
 
 GetAnnualOk returns a tuple with the Annual field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAnnual
 
-`func (o *FundamentalsOutstandingShares) SetAnnual(v []FundamentalsOutstandingSharesData)`
+`func (o *FundamentalsOutstandingShares) SetAnnual(v map[string]FundamentalsOutstandingSharesData)`
 
 SetAnnual sets Annual field to given value.
 
@@ -53,20 +53,20 @@ HasAnnual returns a boolean if a field has been set.
 
 ### GetQuarterly
 
-`func (o *FundamentalsOutstandingShares) GetQuarterly() []FundamentalsOutstandingSharesData`
+`func (o *FundamentalsOutstandingShares) GetQuarterly() map[string]FundamentalsOutstandingSharesData`
 
 GetQuarterly returns the Quarterly field if non-nil, zero value otherwise.
 
 ### GetQuarterlyOk
 
-`func (o *FundamentalsOutstandingShares) GetQuarterlyOk() (*[]FundamentalsOutstandingSharesData, bool)`
+`func (o *FundamentalsOutstandingShares) GetQuarterlyOk() (*map[string]FundamentalsOutstandingSharesData, bool)`
 
 GetQuarterlyOk returns a tuple with the Quarterly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuarterly
 
-`func (o *FundamentalsOutstandingShares) SetQuarterly(v []FundamentalsOutstandingSharesData)`
+`func (o *FundamentalsOutstandingShares) SetQuarterly(v map[string]FundamentalsOutstandingSharesData)`
 
 SetQuarterly sets Quarterly field to given value.
 

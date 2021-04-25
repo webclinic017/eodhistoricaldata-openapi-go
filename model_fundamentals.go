@@ -16,21 +16,21 @@ import (
 
 // Fundamentals struct for Fundamentals
 type Fundamentals struct {
-	General                    *FundamentalsGeneral                          `json:"General,omitempty"`
-	Components                 *FundamentalsComponents                       `json:"Components,omitempty"`
-	HistoricalTickerComponents *[]FundamentalsHistoricalTickerComponentsData `json:"HistoricalTickerComponents,omitempty"`
-	Highlights                 *FundamentalsHighlights                       `json:"Highlights,omitempty"`
-	Valuation                  *FundamentalsValuation                        `json:"Valuation,omitempty"`
-	SharesStats                *FundamentalsSharesStats                      `json:"SharesStats,omitempty"`
-	Technicals                 *FundamentalsTechnicals                       `json:"Technicals,omitempty"`
-	SplitsDividends            *FundamentalsSplitsDividends                  `json:"SplitsDividends,omitempty"`
-	AnalystRatings             *FundamentalsAnalystRatings                   `json:"AnalystRatings,omitempty"`
-	Holders                    *FundamentalsHolders                          `json:"Holders,omitempty"`
-	InsiderTransactions        *[]FundamentalsInsiderTransactionsData        `json:"InsiderTransactions,omitempty"`
-	ESGScores                  *FundamentalsESGScores                        `json:"ESGScores,omitempty"`
-	OutstandingShares          *FundamentalsOutstandingShares                `json:"outstandingShares,omitempty"`
-	Earnings                   *FundamentalsEarnings                         `json:"Earnings,omitempty"`
-	Financials                 *FundamentalsFinancials                       `json:"Financials,omitempty"`
+	General                    *FundamentalsGeneral                            `json:"General,omitempty"`
+	Components                 *FundamentalsComponents                         `json:"Components,omitempty"`
+	HistoricalTickerComponents *[]FundamentalsHistoricalTickerComponentsData   `json:"HistoricalTickerComponents,omitempty"`
+	Highlights                 *FundamentalsHighlights                         `json:"Highlights,omitempty"`
+	Valuation                  *FundamentalsValuation                          `json:"Valuation,omitempty"`
+	SharesStats                *FundamentalsSharesStats                        `json:"SharesStats,omitempty"`
+	Technicals                 *FundamentalsTechnicals                         `json:"Technicals,omitempty"`
+	SplitsDividends            *FundamentalsSplitsDividends                    `json:"SplitsDividends,omitempty"`
+	AnalystRatings             *FundamentalsAnalystRatings                     `json:"AnalystRatings,omitempty"`
+	Holders                    *FundamentalsHolders                            `json:"Holders,omitempty"`
+	InsiderTransactions        *map[string]FundamentalsInsiderTransactionsData `json:"InsiderTransactions,omitempty"`
+	ESGScores                  *FundamentalsESGScores                          `json:"ESGScores,omitempty"`
+	OutstandingShares          *FundamentalsOutstandingShares                  `json:"outstandingShares,omitempty"`
+	Earnings                   *FundamentalsEarnings                           `json:"Earnings,omitempty"`
+	Financials                 *FundamentalsFinancials                         `json:"Financials,omitempty"`
 }
 
 // NewFundamentals instantiates a new Fundamentals object
@@ -371,9 +371,9 @@ func (o *Fundamentals) SetHolders(v FundamentalsHolders) {
 }
 
 // GetInsiderTransactions returns the InsiderTransactions field value if set, zero value otherwise.
-func (o *Fundamentals) GetInsiderTransactions() []FundamentalsInsiderTransactionsData {
+func (o *Fundamentals) GetInsiderTransactions() map[string]FundamentalsInsiderTransactionsData {
 	if o == nil || o.InsiderTransactions == nil {
-		var ret []FundamentalsInsiderTransactionsData
+		var ret map[string]FundamentalsInsiderTransactionsData
 		return ret
 	}
 	return *o.InsiderTransactions
@@ -381,7 +381,7 @@ func (o *Fundamentals) GetInsiderTransactions() []FundamentalsInsiderTransaction
 
 // GetInsiderTransactionsOk returns a tuple with the InsiderTransactions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Fundamentals) GetInsiderTransactionsOk() (*[]FundamentalsInsiderTransactionsData, bool) {
+func (o *Fundamentals) GetInsiderTransactionsOk() (*map[string]FundamentalsInsiderTransactionsData, bool) {
 	if o == nil || o.InsiderTransactions == nil {
 		return nil, false
 	}
@@ -397,8 +397,8 @@ func (o *Fundamentals) HasInsiderTransactions() bool {
 	return false
 }
 
-// SetInsiderTransactions gets a reference to the given []FundamentalsInsiderTransactionsData and assigns it to the InsiderTransactions field.
-func (o *Fundamentals) SetInsiderTransactions(v []FundamentalsInsiderTransactionsData) {
+// SetInsiderTransactions gets a reference to the given map[string]FundamentalsInsiderTransactionsData and assigns it to the InsiderTransactions field.
+func (o *Fundamentals) SetInsiderTransactions(v map[string]FundamentalsInsiderTransactionsData) {
 	o.InsiderTransactions = &v
 }
 

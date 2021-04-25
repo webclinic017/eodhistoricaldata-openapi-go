@@ -33,8 +33,8 @@ func main() {
     exchange := "exchange_example" // string | string exchange (name or id) of the bulk-fundamentals
     fmt := "["json","csv"]" // string | string fmt (name or id) of the bulk-fundamentals
     symbols := "symbols_example" // string | string symbols (name or id) of the bulk-fundamentals
-    offset := "offset_example" // string | string offset (name or id) of the bulk-fundamentals
-    limit := "limit_example" // string | string limit (name or id) of the bulk-fundamentals
+    offset := "offset_example" // string | string offset (name or id) of the bulk-fundamentals (optional)
+    limit := "limit_example" // string | string limit (name or id) of the bulk-fundamentals (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -109,7 +109,7 @@ import (
 
 func main() {
     ticker := "AAPL.US" // string | string ticker (name or id) of the fundamentals
-    filter := "filter_example" // string | string filter (name or id) of the fundamentals
+    filter := "filter_example" // string | string filter (name or id) of the fundamentals (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
