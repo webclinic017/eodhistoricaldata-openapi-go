@@ -26,7 +26,7 @@ type Quote struct {
 	Close         *float64 `json:"close,omitempty"`
 	AdjustedClose *float64 `json:"adjusted_close,omitempty"`
 	PreviousClose *float64 `json:"previousClose,omitempty"`
-	Volume        *int64   `json:"volume,omitempty"`
+	Volume        *float64 `json:"volume,omitempty"`
 	Change        *float32 `json:"change,omitempty"`
 }
 
@@ -368,9 +368,9 @@ func (o *Quote) SetPreviousClose(v float64) {
 }
 
 // GetVolume returns the Volume field value if set, zero value otherwise.
-func (o *Quote) GetVolume() int64 {
+func (o *Quote) GetVolume() float64 {
 	if o == nil || o.Volume == nil {
-		var ret int64
+		var ret float64
 		return ret
 	}
 	return *o.Volume
@@ -378,7 +378,7 @@ func (o *Quote) GetVolume() int64 {
 
 // GetVolumeOk returns a tuple with the Volume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Quote) GetVolumeOk() (*int64, bool) {
+func (o *Quote) GetVolumeOk() (*float64, bool) {
 	if o == nil || o.Volume == nil {
 		return nil, false
 	}
@@ -394,8 +394,8 @@ func (o *Quote) HasVolume() bool {
 	return false
 }
 
-// SetVolume gets a reference to the given int64 and assigns it to the Volume field.
-func (o *Quote) SetVolume(v int64) {
+// SetVolume gets a reference to the given float64 and assigns it to the Volume field.
+func (o *Quote) SetVolume(v float64) {
 	o.Volume = &v
 }
 

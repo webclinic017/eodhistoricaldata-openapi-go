@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Close** | Pointer to **float64** |  | [optional] 
 **AdjustedClose** | Pointer to **float64** |  | [optional] 
 **PreviousClose** | Pointer to **float64** |  | [optional] 
-**Volume** | Pointer to **int64** |  | [optional] 
+**Volume** | Pointer to **float64** |  | [optional] 
 **Change** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -288,20 +288,20 @@ HasPreviousClose returns a boolean if a field has been set.
 
 ### GetVolume
 
-`func (o *Quote) GetVolume() int64`
+`func (o *Quote) GetVolume() float64`
 
 GetVolume returns the Volume field if non-nil, zero value otherwise.
 
 ### GetVolumeOk
 
-`func (o *Quote) GetVolumeOk() (*int64, bool)`
+`func (o *Quote) GetVolumeOk() (*float64, bool)`
 
 GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolume
 
-`func (o *Quote) SetVolume(v int64)`
+`func (o *Quote) SetVolume(v float64)`
 
 SetVolume sets Volume field to given value.
 

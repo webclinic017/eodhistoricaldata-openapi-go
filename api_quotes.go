@@ -187,20 +187,20 @@ type ApiListHistoryQuotesRequest struct {
 	ctx        _context.Context
 	ApiService *QuotesApiService
 	ticker     string
-	g          *string
 	fmt        *string
+	g          *string
 	filter     *string
 	order      *string
 	from       *string
 	to         *string
 }
 
-func (r ApiListHistoryQuotesRequest) G(g string) ApiListHistoryQuotesRequest {
-	r.g = &g
-	return r
-}
 func (r ApiListHistoryQuotesRequest) Fmt(fmt string) ApiListHistoryQuotesRequest {
 	r.fmt = &fmt
+	return r
+}
+func (r ApiListHistoryQuotesRequest) G(g string) ApiListHistoryQuotesRequest {
+	r.g = &g
 	return r
 }
 func (r ApiListHistoryQuotesRequest) Filter(filter string) ApiListHistoryQuotesRequest {
@@ -264,31 +264,26 @@ func (a *QuotesApiService) ListHistoryQuotesExecute(r ApiListHistoryQuotesReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.g == nil {
-		return localVarReturnValue, nil, reportError("g is required and must be specified")
-	}
 	if r.fmt == nil {
 		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
 	}
-	if r.filter == nil {
-		return localVarReturnValue, nil, reportError("filter is required and must be specified")
-	}
-	if r.order == nil {
-		return localVarReturnValue, nil, reportError("order is required and must be specified")
-	}
-	if r.from == nil {
-		return localVarReturnValue, nil, reportError("from is required and must be specified")
-	}
-	if r.to == nil {
-		return localVarReturnValue, nil, reportError("to is required and must be specified")
-	}
 
-	localVarQueryParams.Add("g", parameterToString(*r.g, ""))
+	if r.g != nil {
+		localVarQueryParams.Add("g", parameterToString(*r.g, ""))
+	}
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
-	localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
-	localVarQueryParams.Add("order", parameterToString(*r.order, ""))
-	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
-	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	if r.filter != nil {
+		localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
+	}
+	if r.order != nil {
+		localVarQueryParams.Add("order", parameterToString(*r.order, ""))
+	}
+	if r.from != nil {
+		localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	}
+	if r.to != nil {
+		localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

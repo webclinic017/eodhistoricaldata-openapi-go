@@ -16,9 +16,9 @@ import (
 
 // ShortsQuote struct for ShortsQuote
 type ShortsQuote struct {
-	Date   *string `json:"date,omitempty"`
-	Short  *int64  `json:"short,omitempty"`
-	Volume *int64  `json:"volume,omitempty"`
+	Date   *string  `json:"date,omitempty"`
+	Short  *int64   `json:"short,omitempty"`
+	Volume *float64 `json:"volume,omitempty"`
 }
 
 // NewShortsQuote instantiates a new ShortsQuote object
@@ -103,9 +103,9 @@ func (o *ShortsQuote) SetShort(v int64) {
 }
 
 // GetVolume returns the Volume field value if set, zero value otherwise.
-func (o *ShortsQuote) GetVolume() int64 {
+func (o *ShortsQuote) GetVolume() float64 {
 	if o == nil || o.Volume == nil {
-		var ret int64
+		var ret float64
 		return ret
 	}
 	return *o.Volume
@@ -113,7 +113,7 @@ func (o *ShortsQuote) GetVolume() int64 {
 
 // GetVolumeOk returns a tuple with the Volume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShortsQuote) GetVolumeOk() (*int64, bool) {
+func (o *ShortsQuote) GetVolumeOk() (*float64, bool) {
 	if o == nil || o.Volume == nil {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *ShortsQuote) HasVolume() bool {
 	return false
 }
 
-// SetVolume gets a reference to the given int64 and assigns it to the Volume field.
-func (o *ShortsQuote) SetVolume(v int64) {
+// SetVolume gets a reference to the given float64 and assigns it to the Volume field.
+func (o *ShortsQuote) SetVolume(v float64) {
 	o.Volume = &v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | Pointer to **string** |  | [optional] 
 **Short** | Pointer to **int64** |  | [optional] 
-**Volume** | Pointer to **int64** |  | [optional] 
+**Volume** | Pointer to **float64** |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasShort returns a boolean if a field has been set.
 
 ### GetVolume
 
-`func (o *ShortsQuote) GetVolume() int64`
+`func (o *ShortsQuote) GetVolume() float64`
 
 GetVolume returns the Volume field if non-nil, zero value otherwise.
 
 ### GetVolumeOk
 
-`func (o *ShortsQuote) GetVolumeOk() (*int64, bool)`
+`func (o *ShortsQuote) GetVolumeOk() (*float64, bool)`
 
 GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolume
 
-`func (o *ShortsQuote) SetVolume(v int64)`
+`func (o *ShortsQuote) SetVolume(v float64)`
 
 SetVolume sets Volume field to given value.
 
