@@ -18,6 +18,7 @@ import (
 type Dividend struct {
 	Date            *string  `json:"date,omitempty"`
 	DeclarationDate *string  `json:"declarationDate,omitempty"`
+	RecordDate      *string  `json:"recordDate,omitempty"`
 	PaymentDate     *string  `json:"paymentDate,omitempty"`
 	Period          *string  `json:"period,omitempty"`
 	Value           *float64 `json:"value,omitempty"`
@@ -104,6 +105,38 @@ func (o *Dividend) HasDeclarationDate() bool {
 // SetDeclarationDate gets a reference to the given string and assigns it to the DeclarationDate field.
 func (o *Dividend) SetDeclarationDate(v string) {
 	o.DeclarationDate = &v
+}
+
+// GetRecordDate returns the RecordDate field value if set, zero value otherwise.
+func (o *Dividend) GetRecordDate() string {
+	if o == nil || o.RecordDate == nil {
+		var ret string
+		return ret
+	}
+	return *o.RecordDate
+}
+
+// GetRecordDateOk returns a tuple with the RecordDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dividend) GetRecordDateOk() (*string, bool) {
+	if o == nil || o.RecordDate == nil {
+		return nil, false
+	}
+	return o.RecordDate, true
+}
+
+// HasRecordDate returns a boolean if a field has been set.
+func (o *Dividend) HasRecordDate() bool {
+	if o != nil && o.RecordDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRecordDate gets a reference to the given string and assigns it to the RecordDate field.
+func (o *Dividend) SetRecordDate(v string) {
+	o.RecordDate = &v
 }
 
 // GetPaymentDate returns the PaymentDate field value if set, zero value otherwise.
@@ -273,6 +306,9 @@ func (o Dividend) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeclarationDate != nil {
 		toSerialize["declarationDate"] = o.DeclarationDate
+	}
+	if o.RecordDate != nil {
+		toSerialize["recordDate"] = o.RecordDate
 	}
 	if o.PaymentDate != nil {
 		toSerialize["paymentDate"] = o.PaymentDate

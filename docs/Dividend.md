@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | Pointer to **string** |  | [optional] 
 **DeclarationDate** | Pointer to **string** |  | [optional] 
+**RecordDate** | Pointer to **string** |  | [optional] 
 **PaymentDate** | Pointer to **string** |  | [optional] 
 **Period** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
@@ -80,6 +81,31 @@ SetDeclarationDate sets DeclarationDate field to given value.
 `func (o *Dividend) HasDeclarationDate() bool`
 
 HasDeclarationDate returns a boolean if a field has been set.
+
+### GetRecordDate
+
+`func (o *Dividend) GetRecordDate() string`
+
+GetRecordDate returns the RecordDate field if non-nil, zero value otherwise.
+
+### GetRecordDateOk
+
+`func (o *Dividend) GetRecordDateOk() (*string, bool)`
+
+GetRecordDateOk returns a tuple with the RecordDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecordDate
+
+`func (o *Dividend) SetRecordDate(v string)`
+
+SetRecordDate sets RecordDate field to given value.
+
+### HasRecordDate
+
+`func (o *Dividend) HasRecordDate() bool`
+
+HasRecordDate returns a boolean if a field has been set.
 
 ### GetPaymentDate
 

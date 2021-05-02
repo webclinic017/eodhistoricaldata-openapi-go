@@ -642,10 +642,20 @@ type ApiListSplitsQuotesRequest struct {
 	ApiService *QuotesApiService
 	ticker     string
 	fmt        *string
+	from       *string
+	to         *string
 }
 
 func (r ApiListSplitsQuotesRequest) Fmt(fmt string) ApiListSplitsQuotesRequest {
 	r.fmt = &fmt
+	return r
+}
+func (r ApiListSplitsQuotesRequest) From(from string) ApiListSplitsQuotesRequest {
+	r.from = &from
+	return r
+}
+func (r ApiListSplitsQuotesRequest) To(to string) ApiListSplitsQuotesRequest {
+	r.to = &to
 	return r
 }
 
@@ -696,8 +706,16 @@ func (a *QuotesApiService) ListSplitsQuotesExecute(r ApiListSplitsQuotesRequest)
 	if r.fmt == nil {
 		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
 	}
+	if r.from == nil {
+		return localVarReturnValue, nil, reportError("from is required and must be specified")
+	}
+	if r.to == nil {
+		return localVarReturnValue, nil, reportError("to is required and must be specified")
+	}
 
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

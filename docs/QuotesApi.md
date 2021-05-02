@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ## ListSplitsQuotes
 
-> []SplitsQuote ListSplitsQuotes(ctx, ticker).Fmt(fmt).Execute()
+> []SplitsQuote ListSplitsQuotes(ctx, ticker).Fmt(fmt).From(from).To(to).Execute()
 
 
 
@@ -345,10 +345,12 @@ import (
 func main() {
     ticker := "ticker_example" // string | string ticker (name or id) of the splitsquotes
     fmt := "["json","csv"]" // string | string fmt (name or id) of the splitsquotes
+    from := "["2021-03-01"]" // string | string from (name or id) of the splitsquotes
+    to := "["2021-03-10"]" // string | string to (name or id) of the splitsquotes
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.QuotesApi.ListSplitsQuotes(context.Background(), ticker).Fmt(fmt).Execute()
+    resp, r, err := api_client.QuotesApi.ListSplitsQuotes(context.Background(), ticker).Fmt(fmt).From(from).To(to).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QuotesApi.ListSplitsQuotes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -375,6 +377,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **fmt** | **string** | string fmt (name or id) of the splitsquotes | 
+ **from** | **string** | string from (name or id) of the splitsquotes | 
+ **to** | **string** | string to (name or id) of the splitsquotes | 
 
 ### Return type
 
