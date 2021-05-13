@@ -89,9 +89,9 @@ Class | Method | HTTP request | Description
 *NewsApi* | [**ListNews**](docs/NewsApi.md#listnews) | **Get** /news | 
 *QuotesApi* | [**ListHistoryIntradayQuotes**](docs/QuotesApi.md#listhistoryintradayquotes) | **Get** /intraday/{ticker} | 
 *QuotesApi* | [**ListHistoryQuotes**](docs/QuotesApi.md#listhistoryquotes) | **Get** /eod/{ticker} | 
-*QuotesApi* | [**ListRealtimeQuotes**](docs/QuotesApi.md#listrealtimequotes) | **Get** /real-time/{ticker} | 
 *QuotesApi* | [**ListShortsQuotes**](docs/QuotesApi.md#listshortsquotes) | **Get** /shorts/{ticker} | 
 *QuotesApi* | [**ListSplitsQuotes**](docs/QuotesApi.md#listsplitsquotes) | **Get** /splits/{ticker} | 
+*QuotesApi* | [**ReadRealtimeQuotes**](docs/QuotesApi.md#readrealtimequotes) | **Get** /real-time/{ticker} | 
 
 
 ## Documentation For Models

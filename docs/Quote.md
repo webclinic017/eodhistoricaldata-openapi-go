@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | Pointer to **string** |  | [optional] 
-**Timestamp** | Pointer to **int64** |  | [optional] 
+**Timestamp** | Pointer to **float64** |  | [optional] 
 **Gmtoffset** | Pointer to **int32** |  | [optional] 
 **Date** | Pointer to **string** |  | [optional] 
 **Open** | Pointer to **float64** |  | [optional] 
@@ -63,20 +63,20 @@ HasCode returns a boolean if a field has been set.
 
 ### GetTimestamp
 
-`func (o *Quote) GetTimestamp() int64`
+`func (o *Quote) GetTimestamp() float64`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *Quote) GetTimestampOk() (*int64, bool)`
+`func (o *Quote) GetTimestampOk() (*float64, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *Quote) SetTimestamp(v int64)`
+`func (o *Quote) SetTimestamp(v float64)`
 
 SetTimestamp sets Timestamp field to given value.
 

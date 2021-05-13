@@ -352,162 +352,6 @@ func (a *QuotesApiService) ListHistoryQuotesExecute(r ApiListHistoryQuotesReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListRealtimeQuotesRequest struct {
-	ctx        _context.Context
-	ApiService *QuotesApiService
-	ticker     string
-	fmt        *string
-	interval   *string
-	filter     *string
-	s          *string
-}
-
-func (r ApiListRealtimeQuotesRequest) Fmt(fmt string) ApiListRealtimeQuotesRequest {
-	r.fmt = &fmt
-	return r
-}
-func (r ApiListRealtimeQuotesRequest) Interval(interval string) ApiListRealtimeQuotesRequest {
-	r.interval = &interval
-	return r
-}
-func (r ApiListRealtimeQuotesRequest) Filter(filter string) ApiListRealtimeQuotesRequest {
-	r.filter = &filter
-	return r
-}
-func (r ApiListRealtimeQuotesRequest) S(s string) ApiListRealtimeQuotesRequest {
-	r.s = &s
-	return r
-}
-
-func (r ApiListRealtimeQuotesRequest) Execute() ([]Quote, *_nethttp.Response, error) {
-	return r.ApiService.ListRealtimeQuotesExecute(r)
-}
-
-/*
- * ListRealtimeQuotes Method for ListRealtimeQuotes
- * List properties of realtimequotes
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param ticker string ticker (name or id) of the realtimequotes
- * @return ApiListRealtimeQuotesRequest
- */
-func (a *QuotesApiService) ListRealtimeQuotes(ctx _context.Context, ticker string) ApiListRealtimeQuotesRequest {
-	return ApiListRealtimeQuotesRequest{
-		ApiService: a,
-		ctx:        ctx,
-		ticker:     ticker,
-	}
-}
-
-/*
- * Execute executes the request
- * @return []Quote
- */
-func (a *QuotesApiService) ListRealtimeQuotesExecute(r ApiListRealtimeQuotesRequest) ([]Quote, *_nethttp.Response, error) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Quote
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuotesApiService.ListRealtimeQuotes")
-	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/real-time/{ticker}"
-	localVarPath = strings.Replace(localVarPath, "{"+"ticker"+"}", _neturl.PathEscape(parameterToString(r.ticker, "")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-	if r.fmt == nil {
-		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
-	}
-	if r.interval == nil {
-		return localVarReturnValue, nil, reportError("interval is required and must be specified")
-	}
-	if r.filter == nil {
-		return localVarReturnValue, nil, reportError("filter is required and must be specified")
-	}
-	if r.s == nil {
-		return localVarReturnValue, nil, reportError("s is required and must be specified")
-	}
-
-	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
-	localVarQueryParams.Add("interval", parameterToString(*r.interval, ""))
-	localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
-	localVarQueryParams.Add("s", parameterToString(*r.s, ""))
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["ApiKeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarQueryParams.Add("api_token", key)
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApiListShortsQuotesRequest struct {
 	ctx        _context.Context
 	ApiService *QuotesApiService
@@ -716,6 +560,151 @@ func (a *QuotesApiService) ListSplitsQuotesExecute(r ApiListSplitsQuotesRequest)
 	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
 	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
 	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api_token", key)
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiReadRealtimeQuotesRequest struct {
+	ctx        _context.Context
+	ApiService *QuotesApiService
+	ticker     string
+	fmt        *string
+	interval   *string
+	filter     *string
+}
+
+func (r ApiReadRealtimeQuotesRequest) Fmt(fmt string) ApiReadRealtimeQuotesRequest {
+	r.fmt = &fmt
+	return r
+}
+func (r ApiReadRealtimeQuotesRequest) Interval(interval string) ApiReadRealtimeQuotesRequest {
+	r.interval = &interval
+	return r
+}
+func (r ApiReadRealtimeQuotesRequest) Filter(filter string) ApiReadRealtimeQuotesRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiReadRealtimeQuotesRequest) Execute() (Quote, *_nethttp.Response, error) {
+	return r.ApiService.ReadRealtimeQuotesExecute(r)
+}
+
+/*
+ * ReadRealtimeQuotes Method for ReadRealtimeQuotes
+ * Read properties of realtimequotes
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ticker string ticker (name or id) of the realtimequotes
+ * @return ApiReadRealtimeQuotesRequest
+ */
+func (a *QuotesApiService) ReadRealtimeQuotes(ctx _context.Context, ticker string) ApiReadRealtimeQuotesRequest {
+	return ApiReadRealtimeQuotesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		ticker:     ticker,
+	}
+}
+
+/*
+ * Execute executes the request
+ * @return Quote
+ */
+func (a *QuotesApiService) ReadRealtimeQuotesExecute(r ApiReadRealtimeQuotesRequest) (Quote, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  Quote
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuotesApiService.ReadRealtimeQuotes")
+	if err != nil {
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/real-time/{ticker}"
+	localVarPath = strings.Replace(localVarPath, "{"+"ticker"+"}", _neturl.PathEscape(parameterToString(r.ticker, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+	if r.fmt == nil {
+		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
+	}
+
+	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	if r.interval != nil {
+		localVarQueryParams.Add("interval", parameterToString(*r.interval, ""))
+	}
+	if r.filter != nil {
+		localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

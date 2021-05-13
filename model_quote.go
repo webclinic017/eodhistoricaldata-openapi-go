@@ -17,7 +17,7 @@ import (
 // Quote struct for Quote
 type Quote struct {
 	Code          *string  `json:"code,omitempty"`
-	Timestamp     *int64   `json:"timestamp,omitempty"`
+	Timestamp     *float64 `json:"timestamp,omitempty"`
 	Gmtoffset     *int32   `json:"gmtoffset,omitempty"`
 	Date          *string  `json:"date,omitempty"`
 	Open          *float64 `json:"open,omitempty"`
@@ -80,9 +80,9 @@ func (o *Quote) SetCode(v string) {
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
-func (o *Quote) GetTimestamp() int64 {
+func (o *Quote) GetTimestamp() float64 {
 	if o == nil || o.Timestamp == nil {
-		var ret int64
+		var ret float64
 		return ret
 	}
 	return *o.Timestamp
@@ -90,7 +90,7 @@ func (o *Quote) GetTimestamp() int64 {
 
 // GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Quote) GetTimestampOk() (*int64, bool) {
+func (o *Quote) GetTimestampOk() (*float64, bool) {
 	if o == nil || o.Timestamp == nil {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *Quote) HasTimestamp() bool {
 	return false
 }
 
-// SetTimestamp gets a reference to the given int64 and assigns it to the Timestamp field.
-func (o *Quote) SetTimestamp(v int64) {
+// SetTimestamp gets a reference to the given float64 and assigns it to the Timestamp field.
+func (o *Quote) SetTimestamp(v float64) {
 	o.Timestamp = &v
 }
 
