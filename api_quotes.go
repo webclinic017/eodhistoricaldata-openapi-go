@@ -187,20 +187,20 @@ type ApiListHistoryQuotesRequest struct {
 	ctx        _context.Context
 	ApiService *QuotesApiService
 	ticker     string
-	fmt        *string
 	g          *string
+	fmt        *string
 	filter     *string
 	order      *string
 	from       *string
 	to         *string
 }
 
-func (r ApiListHistoryQuotesRequest) Fmt(fmt string) ApiListHistoryQuotesRequest {
-	r.fmt = &fmt
-	return r
-}
 func (r ApiListHistoryQuotesRequest) G(g string) ApiListHistoryQuotesRequest {
 	r.g = &g
+	return r
+}
+func (r ApiListHistoryQuotesRequest) Fmt(fmt string) ApiListHistoryQuotesRequest {
+	r.fmt = &fmt
 	return r
 }
 func (r ApiListHistoryQuotesRequest) Filter(filter string) ApiListHistoryQuotesRequest {
@@ -264,14 +264,13 @@ func (a *QuotesApiService) ListHistoryQuotesExecute(r ApiListHistoryQuotesReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.fmt == nil {
-		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
-	}
 
 	if r.g != nil {
 		localVarQueryParams.Add("g", parameterToString(*r.g, ""))
 	}
-	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	if r.fmt != nil {
+		localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	}
 	if r.filter != nil {
 		localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
 	}

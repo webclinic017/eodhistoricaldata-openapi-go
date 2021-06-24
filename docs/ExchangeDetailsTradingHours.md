@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Open** | Pointer to **string** |  | [optional] 
+**OpenUTC** | Pointer to **string** |  | [optional] 
 **Close** | Pointer to **string** |  | [optional] 
+**CloseUTC** | Pointer to **string** |  | [optional] 
 **WorkingDays** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -52,6 +54,31 @@ SetOpen sets Open field to given value.
 
 HasOpen returns a boolean if a field has been set.
 
+### GetOpenUTC
+
+`func (o *ExchangeDetailsTradingHours) GetOpenUTC() string`
+
+GetOpenUTC returns the OpenUTC field if non-nil, zero value otherwise.
+
+### GetOpenUTCOk
+
+`func (o *ExchangeDetailsTradingHours) GetOpenUTCOk() (*string, bool)`
+
+GetOpenUTCOk returns a tuple with the OpenUTC field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOpenUTC
+
+`func (o *ExchangeDetailsTradingHours) SetOpenUTC(v string)`
+
+SetOpenUTC sets OpenUTC field to given value.
+
+### HasOpenUTC
+
+`func (o *ExchangeDetailsTradingHours) HasOpenUTC() bool`
+
+HasOpenUTC returns a boolean if a field has been set.
+
 ### GetClose
 
 `func (o *ExchangeDetailsTradingHours) GetClose() string`
@@ -76,6 +103,31 @@ SetClose sets Close field to given value.
 `func (o *ExchangeDetailsTradingHours) HasClose() bool`
 
 HasClose returns a boolean if a field has been set.
+
+### GetCloseUTC
+
+`func (o *ExchangeDetailsTradingHours) GetCloseUTC() string`
+
+GetCloseUTC returns the CloseUTC field if non-nil, zero value otherwise.
+
+### GetCloseUTCOk
+
+`func (o *ExchangeDetailsTradingHours) GetCloseUTCOk() (*string, bool)`
+
+GetCloseUTCOk returns a tuple with the CloseUTC field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloseUTC
+
+`func (o *ExchangeDetailsTradingHours) SetCloseUTC(v string)`
+
+SetCloseUTC sets CloseUTC field to given value.
+
+### HasCloseUTC
+
+`func (o *ExchangeDetailsTradingHours) HasCloseUTC() bool`
+
+HasCloseUTC returns a boolean if a field has been set.
 
 ### GetWorkingDays
 

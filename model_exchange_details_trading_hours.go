@@ -17,7 +17,9 @@ import (
 // ExchangeDetailsTradingHours struct for ExchangeDetailsTradingHours
 type ExchangeDetailsTradingHours struct {
 	Open        *string `json:"Open,omitempty"`
+	OpenUTC     *string `json:"OpenUTC,omitempty"`
 	Close       *string `json:"Close,omitempty"`
+	CloseUTC    *string `json:"CloseUTC,omitempty"`
 	WorkingDays *string `json:"WorkingDays,omitempty"`
 }
 
@@ -70,6 +72,38 @@ func (o *ExchangeDetailsTradingHours) SetOpen(v string) {
 	o.Open = &v
 }
 
+// GetOpenUTC returns the OpenUTC field value if set, zero value otherwise.
+func (o *ExchangeDetailsTradingHours) GetOpenUTC() string {
+	if o == nil || o.OpenUTC == nil {
+		var ret string
+		return ret
+	}
+	return *o.OpenUTC
+}
+
+// GetOpenUTCOk returns a tuple with the OpenUTC field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExchangeDetailsTradingHours) GetOpenUTCOk() (*string, bool) {
+	if o == nil || o.OpenUTC == nil {
+		return nil, false
+	}
+	return o.OpenUTC, true
+}
+
+// HasOpenUTC returns a boolean if a field has been set.
+func (o *ExchangeDetailsTradingHours) HasOpenUTC() bool {
+	if o != nil && o.OpenUTC != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOpenUTC gets a reference to the given string and assigns it to the OpenUTC field.
+func (o *ExchangeDetailsTradingHours) SetOpenUTC(v string) {
+	o.OpenUTC = &v
+}
+
 // GetClose returns the Close field value if set, zero value otherwise.
 func (o *ExchangeDetailsTradingHours) GetClose() string {
 	if o == nil || o.Close == nil {
@@ -100,6 +134,38 @@ func (o *ExchangeDetailsTradingHours) HasClose() bool {
 // SetClose gets a reference to the given string and assigns it to the Close field.
 func (o *ExchangeDetailsTradingHours) SetClose(v string) {
 	o.Close = &v
+}
+
+// GetCloseUTC returns the CloseUTC field value if set, zero value otherwise.
+func (o *ExchangeDetailsTradingHours) GetCloseUTC() string {
+	if o == nil || o.CloseUTC == nil {
+		var ret string
+		return ret
+	}
+	return *o.CloseUTC
+}
+
+// GetCloseUTCOk returns a tuple with the CloseUTC field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExchangeDetailsTradingHours) GetCloseUTCOk() (*string, bool) {
+	if o == nil || o.CloseUTC == nil {
+		return nil, false
+	}
+	return o.CloseUTC, true
+}
+
+// HasCloseUTC returns a boolean if a field has been set.
+func (o *ExchangeDetailsTradingHours) HasCloseUTC() bool {
+	if o != nil && o.CloseUTC != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCloseUTC gets a reference to the given string and assigns it to the CloseUTC field.
+func (o *ExchangeDetailsTradingHours) SetCloseUTC(v string) {
+	o.CloseUTC = &v
 }
 
 // GetWorkingDays returns the WorkingDays field value if set, zero value otherwise.
@@ -139,8 +205,14 @@ func (o ExchangeDetailsTradingHours) MarshalJSON() ([]byte, error) {
 	if o.Open != nil {
 		toSerialize["Open"] = o.Open
 	}
+	if o.OpenUTC != nil {
+		toSerialize["OpenUTC"] = o.OpenUTC
+	}
 	if o.Close != nil {
 		toSerialize["Close"] = o.Close
+	}
+	if o.CloseUTC != nil {
+		toSerialize["CloseUTC"] = o.CloseUTC
 	}
 	if o.WorkingDays != nil {
 		toSerialize["WorkingDays"] = o.WorkingDays

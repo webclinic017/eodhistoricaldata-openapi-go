@@ -32,9 +32,9 @@ import (
 
 func main() {
     exchange := "exchange_example" // string | string exchange (name or id) of the exchangedetails
-    fmt := "["json","csv"]" // string | string fmt (name or id) of the exchangedetails
-    from := "["2021-03-01"]" // string | string from (name or id) of the exchangedetails
-    to := "["2021-03-10"]" // string | string to (name or id) of the exchangedetails
+    fmt := "["json","csv"]" // string | string fmt (name or id) of the exchangedetails (optional)
+    from := "["2021-03-01"]" // string | string from (name or id) of the exchangedetails (optional)
+    to := "["2021-03-10"]" // string | string to (name or id) of the exchangedetails (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

@@ -93,19 +93,16 @@ func (a *ExchangesApiService) ListExchangeDetailsExecute(r ApiListExchangeDetail
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	if r.fmt == nil {
-		return localVarReturnValue, nil, reportError("fmt is required and must be specified")
-	}
-	if r.from == nil {
-		return localVarReturnValue, nil, reportError("from is required and must be specified")
-	}
-	if r.to == nil {
-		return localVarReturnValue, nil, reportError("to is required and must be specified")
-	}
 
-	localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
-	localVarQueryParams.Add("from", parameterToString(*r.from, ""))
-	localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	if r.fmt != nil {
+		localVarQueryParams.Add("fmt", parameterToString(*r.fmt, ""))
+	}
+	if r.from != nil {
+		localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	}
+	if r.to != nil {
+		localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
