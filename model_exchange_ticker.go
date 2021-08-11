@@ -16,12 +16,13 @@ import (
 
 // ExchangeTicker struct for ExchangeTicker
 type ExchangeTicker struct {
-	Code     *string `json:"Code,omitempty"`
-	Name     *string `json:"Name,omitempty"`
-	Country  *string `json:"Country,omitempty"`
-	Exchange *string `json:"Exchange,omitempty"`
-	Currency *string `json:"Currency,omitempty"`
-	Type     *string `json:"Type,omitempty"`
+	Code     *string        `json:"Code,omitempty"`
+	Name     *string        `json:"Name,omitempty"`
+	Country  *string        `json:"Country,omitempty"`
+	Exchange *string        `json:"Exchange,omitempty"`
+	Currency *string        `json:"Currency,omitempty"`
+	Type     *string        `json:"Type,omitempty"`
+	Isin     NullableString `json:"Isin,omitempty"`
 }
 
 // NewExchangeTicker instantiates a new ExchangeTicker object
@@ -233,6 +234,49 @@ func (o *ExchangeTicker) SetType(v string) {
 	o.Type = &v
 }
 
+// GetIsin returns the Isin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ExchangeTicker) GetIsin() string {
+	if o == nil || o.Isin.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.Isin.Get()
+}
+
+// GetIsinOk returns a tuple with the Isin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ExchangeTicker) GetIsinOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Isin.Get(), o.Isin.IsSet()
+}
+
+// HasIsin returns a boolean if a field has been set.
+func (o *ExchangeTicker) HasIsin() bool {
+	if o != nil && o.Isin.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsin gets a reference to the given NullableString and assigns it to the Isin field.
+func (o *ExchangeTicker) SetIsin(v string) {
+	o.Isin.Set(&v)
+}
+
+// SetIsinNil sets the value for Isin to be an explicit nil
+func (o *ExchangeTicker) SetIsinNil() {
+	o.Isin.Set(nil)
+}
+
+// UnsetIsin ensures that no value is present for Isin, not even an explicit nil
+func (o *ExchangeTicker) UnsetIsin() {
+	o.Isin.Unset()
+}
+
 func (o ExchangeTicker) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
@@ -252,6 +296,9 @@ func (o ExchangeTicker) MarshalJSON() ([]byte, error) {
 	}
 	if o.Type != nil {
 		toSerialize["Type"] = o.Type
+	}
+	if o.Isin.IsSet() {
+		toSerialize["Isin"] = o.Isin.Get()
 	}
 	return json.Marshal(toSerialize)
 }

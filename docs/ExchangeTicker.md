@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Exchange** | Pointer to **string** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
+**Isin** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -180,6 +181,41 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### GetIsin
+
+`func (o *ExchangeTicker) GetIsin() string`
+
+GetIsin returns the Isin field if non-nil, zero value otherwise.
+
+### GetIsinOk
+
+`func (o *ExchangeTicker) GetIsinOk() (*string, bool)`
+
+GetIsinOk returns a tuple with the Isin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsin
+
+`func (o *ExchangeTicker) SetIsin(v string)`
+
+SetIsin sets Isin field to given value.
+
+### HasIsin
+
+`func (o *ExchangeTicker) HasIsin() bool`
+
+HasIsin returns a boolean if a field has been set.
+
+### SetIsinNil
+
+`func (o *ExchangeTicker) SetIsinNil(b bool)`
+
+ SetIsinNil sets the value for Isin to be an explicit nil
+
+### UnsetIsin
+`func (o *ExchangeTicker) UnsetIsin()`
+
+UnsetIsin ensures that no value is present for Isin, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
