@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ReportDate** | Pointer to **string** |  | [optional] 
 **Date** | Pointer to **string** |  | [optional] 
-**BeforeAfterMarket** | Pointer to **float64** |  | [optional] 
+**BeforeAfterMarket** | Pointer to **string** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **EpsActual** | Pointer to **float64** |  | [optional] 
 **EpsEstimate** | Pointer to **float64** |  | [optional] 
@@ -84,20 +84,20 @@ HasDate returns a boolean if a field has been set.
 
 ### GetBeforeAfterMarket
 
-`func (o *FundamentalsEarningsHistory) GetBeforeAfterMarket() float64`
+`func (o *FundamentalsEarningsHistory) GetBeforeAfterMarket() string`
 
 GetBeforeAfterMarket returns the BeforeAfterMarket field if non-nil, zero value otherwise.
 
 ### GetBeforeAfterMarketOk
 
-`func (o *FundamentalsEarningsHistory) GetBeforeAfterMarketOk() (*float64, bool)`
+`func (o *FundamentalsEarningsHistory) GetBeforeAfterMarketOk() (*string, bool)`
 
 GetBeforeAfterMarketOk returns a tuple with the BeforeAfterMarket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBeforeAfterMarket
 
-`func (o *FundamentalsEarningsHistory) SetBeforeAfterMarket(v float64)`
+`func (o *FundamentalsEarningsHistory) SetBeforeAfterMarket(v string)`
 
 SetBeforeAfterMarket sets BeforeAfterMarket field to given value.
 

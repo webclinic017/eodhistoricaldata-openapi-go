@@ -18,7 +18,7 @@ import (
 type FundamentalsEarningsHistory struct {
 	ReportDate        *string  `json:"reportDate,omitempty"`
 	Date              *string  `json:"date,omitempty"`
-	BeforeAfterMarket *float64 `json:"beforeAfterMarket,omitempty"`
+	BeforeAfterMarket *string  `json:"beforeAfterMarket,omitempty"`
 	Currency          *string  `json:"currency,omitempty"`
 	EpsActual         *float64 `json:"epsActual,omitempty"`
 	EpsEstimate       *float64 `json:"epsEstimate,omitempty"`
@@ -108,9 +108,9 @@ func (o *FundamentalsEarningsHistory) SetDate(v string) {
 }
 
 // GetBeforeAfterMarket returns the BeforeAfterMarket field value if set, zero value otherwise.
-func (o *FundamentalsEarningsHistory) GetBeforeAfterMarket() float64 {
+func (o *FundamentalsEarningsHistory) GetBeforeAfterMarket() string {
 	if o == nil || o.BeforeAfterMarket == nil {
-		var ret float64
+		var ret string
 		return ret
 	}
 	return *o.BeforeAfterMarket
@@ -118,7 +118,7 @@ func (o *FundamentalsEarningsHistory) GetBeforeAfterMarket() float64 {
 
 // GetBeforeAfterMarketOk returns a tuple with the BeforeAfterMarket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsEarningsHistory) GetBeforeAfterMarketOk() (*float64, bool) {
+func (o *FundamentalsEarningsHistory) GetBeforeAfterMarketOk() (*string, bool) {
 	if o == nil || o.BeforeAfterMarket == nil {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *FundamentalsEarningsHistory) HasBeforeAfterMarket() bool {
 	return false
 }
 
-// SetBeforeAfterMarket gets a reference to the given float64 and assigns it to the BeforeAfterMarket field.
-func (o *FundamentalsEarningsHistory) SetBeforeAfterMarket(v float64) {
+// SetBeforeAfterMarket gets a reference to the given string and assigns it to the BeforeAfterMarket field.
+func (o *FundamentalsEarningsHistory) SetBeforeAfterMarket(v string) {
 	o.BeforeAfterMarket = &v
 }
 

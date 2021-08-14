@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BalanceSheet** | Pointer to [**FundamentalsFinancialsBalanceSheet**](FundamentalsFinancialsBalanceSheet.md) |  | [optional] 
-**CashFlow** | Pointer to [**FundamentalsFinancialsBalanceSheet**](FundamentalsFinancialsBalanceSheet.md) |  | [optional] 
-**IncomeStatement** | Pointer to [**FundamentalsFinancialsBalanceSheet**](FundamentalsFinancialsBalanceSheet.md) |  | [optional] 
+**CashFlow** | Pointer to [**FundamentalsFinancialsCashFlow**](FundamentalsFinancialsCashFlow.md) |  | [optional] 
+**IncomeStatement** | Pointer to [**FundamentalsFinancialsIncomeStatement**](FundamentalsFinancialsIncomeStatement.md) |  | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasBalanceSheet returns a boolean if a field has been set.
 
 ### GetCashFlow
 
-`func (o *FundamentalsFinancials) GetCashFlow() FundamentalsFinancialsBalanceSheet`
+`func (o *FundamentalsFinancials) GetCashFlow() FundamentalsFinancialsCashFlow`
 
 GetCashFlow returns the CashFlow field if non-nil, zero value otherwise.
 
 ### GetCashFlowOk
 
-`func (o *FundamentalsFinancials) GetCashFlowOk() (*FundamentalsFinancialsBalanceSheet, bool)`
+`func (o *FundamentalsFinancials) GetCashFlowOk() (*FundamentalsFinancialsCashFlow, bool)`
 
 GetCashFlowOk returns a tuple with the CashFlow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCashFlow
 
-`func (o *FundamentalsFinancials) SetCashFlow(v FundamentalsFinancialsBalanceSheet)`
+`func (o *FundamentalsFinancials) SetCashFlow(v FundamentalsFinancialsCashFlow)`
 
 SetCashFlow sets CashFlow field to given value.
 
@@ -79,20 +79,20 @@ HasCashFlow returns a boolean if a field has been set.
 
 ### GetIncomeStatement
 
-`func (o *FundamentalsFinancials) GetIncomeStatement() FundamentalsFinancialsBalanceSheet`
+`func (o *FundamentalsFinancials) GetIncomeStatement() FundamentalsFinancialsIncomeStatement`
 
 GetIncomeStatement returns the IncomeStatement field if non-nil, zero value otherwise.
 
 ### GetIncomeStatementOk
 
-`func (o *FundamentalsFinancials) GetIncomeStatementOk() (*FundamentalsFinancialsBalanceSheet, bool)`
+`func (o *FundamentalsFinancials) GetIncomeStatementOk() (*FundamentalsFinancialsIncomeStatement, bool)`
 
 GetIncomeStatementOk returns a tuple with the IncomeStatement field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIncomeStatement
 
-`func (o *FundamentalsFinancials) SetIncomeStatement(v FundamentalsFinancialsBalanceSheet)`
+`func (o *FundamentalsFinancials) SetIncomeStatement(v FundamentalsFinancialsIncomeStatement)`
 
 SetIncomeStatement sets IncomeStatement field to given value.
 

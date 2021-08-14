@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **History** | Pointer to [**map[string]FundamentalsEarningsHistory**](FundamentalsEarningsHistory.md) |  | [optional] 
 **Trend** | Pointer to [**map[string]FundamentalsEarningsTrend**](FundamentalsEarningsTrend.md) |  | [optional] 
-**Annual** | Pointer to [**map[string]FundamentalsEarningsAnnual**](FundamentalsEarningsAnnual.md) |  | [optional] 
+**Annual** | Pointer to [**map[string]FundamentalsEarningsHistory**](FundamentalsEarningsHistory.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTrend returns a boolean if a field has been set.
 
 ### GetAnnual
 
-`func (o *FundamentalsEarnings) GetAnnual() map[string]FundamentalsEarningsAnnual`
+`func (o *FundamentalsEarnings) GetAnnual() map[string]FundamentalsEarningsHistory`
 
 GetAnnual returns the Annual field if non-nil, zero value otherwise.
 
 ### GetAnnualOk
 
-`func (o *FundamentalsEarnings) GetAnnualOk() (*map[string]FundamentalsEarningsAnnual, bool)`
+`func (o *FundamentalsEarnings) GetAnnualOk() (*map[string]FundamentalsEarningsHistory, bool)`
 
 GetAnnualOk returns a tuple with the Annual field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAnnual
 
-`func (o *FundamentalsEarnings) SetAnnual(v map[string]FundamentalsEarningsAnnual)`
+`func (o *FundamentalsEarnings) SetAnnual(v map[string]FundamentalsEarningsHistory)`
 
 SetAnnual sets Annual field to given value.
 

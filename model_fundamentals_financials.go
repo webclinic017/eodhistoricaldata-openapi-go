@@ -16,9 +16,9 @@ import (
 
 // FundamentalsFinancials struct for FundamentalsFinancials
 type FundamentalsFinancials struct {
-	BalanceSheet    *FundamentalsFinancialsBalanceSheet `json:"Balance_Sheet,omitempty"`
-	CashFlow        *FundamentalsFinancialsBalanceSheet `json:"Cash_Flow,omitempty"`
-	IncomeStatement *FundamentalsFinancialsBalanceSheet `json:"Income_Statement,omitempty"`
+	BalanceSheet    *FundamentalsFinancialsBalanceSheet    `json:"Balance_Sheet,omitempty"`
+	CashFlow        *FundamentalsFinancialsCashFlow        `json:"Cash_Flow,omitempty"`
+	IncomeStatement *FundamentalsFinancialsIncomeStatement `json:"Income_Statement,omitempty"`
 }
 
 // NewFundamentalsFinancials instantiates a new FundamentalsFinancials object
@@ -71,9 +71,9 @@ func (o *FundamentalsFinancials) SetBalanceSheet(v FundamentalsFinancialsBalance
 }
 
 // GetCashFlow returns the CashFlow field value if set, zero value otherwise.
-func (o *FundamentalsFinancials) GetCashFlow() FundamentalsFinancialsBalanceSheet {
+func (o *FundamentalsFinancials) GetCashFlow() FundamentalsFinancialsCashFlow {
 	if o == nil || o.CashFlow == nil {
-		var ret FundamentalsFinancialsBalanceSheet
+		var ret FundamentalsFinancialsCashFlow
 		return ret
 	}
 	return *o.CashFlow
@@ -81,7 +81,7 @@ func (o *FundamentalsFinancials) GetCashFlow() FundamentalsFinancialsBalanceShee
 
 // GetCashFlowOk returns a tuple with the CashFlow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsFinancials) GetCashFlowOk() (*FundamentalsFinancialsBalanceSheet, bool) {
+func (o *FundamentalsFinancials) GetCashFlowOk() (*FundamentalsFinancialsCashFlow, bool) {
 	if o == nil || o.CashFlow == nil {
 		return nil, false
 	}
@@ -97,15 +97,15 @@ func (o *FundamentalsFinancials) HasCashFlow() bool {
 	return false
 }
 
-// SetCashFlow gets a reference to the given FundamentalsFinancialsBalanceSheet and assigns it to the CashFlow field.
-func (o *FundamentalsFinancials) SetCashFlow(v FundamentalsFinancialsBalanceSheet) {
+// SetCashFlow gets a reference to the given FundamentalsFinancialsCashFlow and assigns it to the CashFlow field.
+func (o *FundamentalsFinancials) SetCashFlow(v FundamentalsFinancialsCashFlow) {
 	o.CashFlow = &v
 }
 
 // GetIncomeStatement returns the IncomeStatement field value if set, zero value otherwise.
-func (o *FundamentalsFinancials) GetIncomeStatement() FundamentalsFinancialsBalanceSheet {
+func (o *FundamentalsFinancials) GetIncomeStatement() FundamentalsFinancialsIncomeStatement {
 	if o == nil || o.IncomeStatement == nil {
-		var ret FundamentalsFinancialsBalanceSheet
+		var ret FundamentalsFinancialsIncomeStatement
 		return ret
 	}
 	return *o.IncomeStatement
@@ -113,7 +113,7 @@ func (o *FundamentalsFinancials) GetIncomeStatement() FundamentalsFinancialsBala
 
 // GetIncomeStatementOk returns a tuple with the IncomeStatement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsFinancials) GetIncomeStatementOk() (*FundamentalsFinancialsBalanceSheet, bool) {
+func (o *FundamentalsFinancials) GetIncomeStatementOk() (*FundamentalsFinancialsIncomeStatement, bool) {
 	if o == nil || o.IncomeStatement == nil {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *FundamentalsFinancials) HasIncomeStatement() bool {
 	return false
 }
 
-// SetIncomeStatement gets a reference to the given FundamentalsFinancialsBalanceSheet and assigns it to the IncomeStatement field.
-func (o *FundamentalsFinancials) SetIncomeStatement(v FundamentalsFinancialsBalanceSheet) {
+// SetIncomeStatement gets a reference to the given FundamentalsFinancialsIncomeStatement and assigns it to the IncomeStatement field.
+func (o *FundamentalsFinancials) SetIncomeStatement(v FundamentalsFinancialsIncomeStatement) {
 	o.IncomeStatement = &v
 }
 

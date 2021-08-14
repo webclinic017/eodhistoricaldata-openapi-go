@@ -16,6 +16,7 @@ docs/BondFundamentalsClassification.md
 docs/BondFundamentalsIssueData.md
 docs/BondFundamentalsRating.md
 docs/BondsApi.md
+docs/CashFlow.md
 docs/CompaniesApi.md
 docs/Dividend.md
 docs/DividendsApi.md
@@ -31,11 +32,13 @@ docs/FundamentalsComponents.md
 docs/FundamentalsESGScores.md
 docs/FundamentalsESGScoresActivitiesInvolvement.md
 docs/FundamentalsEarnings.md
-docs/FundamentalsEarningsAnnual.md
 docs/FundamentalsEarningsHistory.md
 docs/FundamentalsEarningsTrend.md
+docs/FundamentalsFinancial.md
 docs/FundamentalsFinancials.md
 docs/FundamentalsFinancialsBalanceSheet.md
+docs/FundamentalsFinancialsCashFlow.md
+docs/FundamentalsFinancialsIncomeStatement.md
 docs/FundamentalsGeneral.md
 docs/FundamentalsGeneralAddressData.md
 docs/FundamentalsGeneralListings.md
@@ -52,6 +55,7 @@ docs/FundamentalsSplitsDividends.md
 docs/FundamentalsSplitsDividendsNumberDividendsByYear.md
 docs/FundamentalsTechnicals.md
 docs/FundamentalsValuation.md
+docs/IncomeStatement.md
 docs/MacroIndicator.md
 docs/MacroIndicatorApi.md
 docs/New.md
@@ -67,6 +71,7 @@ model_bond_fundamentals.go
 model_bond_fundamentals_classification.go
 model_bond_fundamentals_issue_data.go
 model_bond_fundamentals_rating.go
+model_cash_flow.go
 model_dividend.go
 model_exchange.go
 model_exchange_details.go
@@ -77,13 +82,15 @@ model_fundamentals.go
 model_fundamentals_analyst_ratings.go
 model_fundamentals_components.go
 model_fundamentals_earnings.go
-model_fundamentals_earnings_annual.go
 model_fundamentals_earnings_history.go
 model_fundamentals_earnings_trend.go
 model_fundamentals_esg_scores.go
 model_fundamentals_esg_scores_activities_involvement.go
+model_fundamentals_financial.go
 model_fundamentals_financials.go
 model_fundamentals_financials_balance_sheet.go
+model_fundamentals_financials_cash_flow.go
+model_fundamentals_financials_income_statement.go
 model_fundamentals_general.go
 model_fundamentals_general_address_data.go
 model_fundamentals_general_listings.go
@@ -100,6 +107,7 @@ model_fundamentals_splits_dividends.go
 model_fundamentals_splits_dividends_number_dividends_by_year.go
 model_fundamentals_technicals.go
 model_fundamentals_valuation.go
+model_income_statement.go
 model_macro_indicator.go
 model_new.go
 model_quote.go

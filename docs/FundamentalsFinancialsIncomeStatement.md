@@ -1,104 +1,104 @@
-# FundamentalsFinancialsBalanceSheet
+# FundamentalsFinancialsIncomeStatement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrencySymbol** | Pointer to **string** |  | [optional] 
-**Quarterly** | Pointer to [**map[string]FundamentalsFinancial**](FundamentalsFinancial.md) |  | [optional] 
-**Yearly** | Pointer to [**map[string]FundamentalsFinancial**](FundamentalsFinancial.md) |  | [optional] 
+**Quarterly** | Pointer to [**map[string]IncomeStatement**](IncomeStatement.md) |  | [optional] 
+**Yearly** | Pointer to [**map[string]IncomeStatement**](IncomeStatement.md) |  | [optional] 
 
 ## Methods
 
-### NewFundamentalsFinancialsBalanceSheet
+### NewFundamentalsFinancialsIncomeStatement
 
-`func NewFundamentalsFinancialsBalanceSheet() *FundamentalsFinancialsBalanceSheet`
+`func NewFundamentalsFinancialsIncomeStatement() *FundamentalsFinancialsIncomeStatement`
 
-NewFundamentalsFinancialsBalanceSheet instantiates a new FundamentalsFinancialsBalanceSheet object
+NewFundamentalsFinancialsIncomeStatement instantiates a new FundamentalsFinancialsIncomeStatement object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewFundamentalsFinancialsBalanceSheetWithDefaults
+### NewFundamentalsFinancialsIncomeStatementWithDefaults
 
-`func NewFundamentalsFinancialsBalanceSheetWithDefaults() *FundamentalsFinancialsBalanceSheet`
+`func NewFundamentalsFinancialsIncomeStatementWithDefaults() *FundamentalsFinancialsIncomeStatement`
 
-NewFundamentalsFinancialsBalanceSheetWithDefaults instantiates a new FundamentalsFinancialsBalanceSheet object
+NewFundamentalsFinancialsIncomeStatementWithDefaults instantiates a new FundamentalsFinancialsIncomeStatement object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCurrencySymbol
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetCurrencySymbol() string`
+`func (o *FundamentalsFinancialsIncomeStatement) GetCurrencySymbol() string`
 
 GetCurrencySymbol returns the CurrencySymbol field if non-nil, zero value otherwise.
 
 ### GetCurrencySymbolOk
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetCurrencySymbolOk() (*string, bool)`
+`func (o *FundamentalsFinancialsIncomeStatement) GetCurrencySymbolOk() (*string, bool)`
 
 GetCurrencySymbolOk returns a tuple with the CurrencySymbol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrencySymbol
 
-`func (o *FundamentalsFinancialsBalanceSheet) SetCurrencySymbol(v string)`
+`func (o *FundamentalsFinancialsIncomeStatement) SetCurrencySymbol(v string)`
 
 SetCurrencySymbol sets CurrencySymbol field to given value.
 
 ### HasCurrencySymbol
 
-`func (o *FundamentalsFinancialsBalanceSheet) HasCurrencySymbol() bool`
+`func (o *FundamentalsFinancialsIncomeStatement) HasCurrencySymbol() bool`
 
 HasCurrencySymbol returns a boolean if a field has been set.
 
 ### GetQuarterly
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetQuarterly() map[string]FundamentalsFinancial`
+`func (o *FundamentalsFinancialsIncomeStatement) GetQuarterly() map[string]IncomeStatement`
 
 GetQuarterly returns the Quarterly field if non-nil, zero value otherwise.
 
 ### GetQuarterlyOk
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetQuarterlyOk() (*map[string]FundamentalsFinancial, bool)`
+`func (o *FundamentalsFinancialsIncomeStatement) GetQuarterlyOk() (*map[string]IncomeStatement, bool)`
 
 GetQuarterlyOk returns a tuple with the Quarterly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuarterly
 
-`func (o *FundamentalsFinancialsBalanceSheet) SetQuarterly(v map[string]FundamentalsFinancial)`
+`func (o *FundamentalsFinancialsIncomeStatement) SetQuarterly(v map[string]IncomeStatement)`
 
 SetQuarterly sets Quarterly field to given value.
 
 ### HasQuarterly
 
-`func (o *FundamentalsFinancialsBalanceSheet) HasQuarterly() bool`
+`func (o *FundamentalsFinancialsIncomeStatement) HasQuarterly() bool`
 
 HasQuarterly returns a boolean if a field has been set.
 
 ### GetYearly
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetYearly() map[string]FundamentalsFinancial`
+`func (o *FundamentalsFinancialsIncomeStatement) GetYearly() map[string]IncomeStatement`
 
 GetYearly returns the Yearly field if non-nil, zero value otherwise.
 
 ### GetYearlyOk
 
-`func (o *FundamentalsFinancialsBalanceSheet) GetYearlyOk() (*map[string]FundamentalsFinancial, bool)`
+`func (o *FundamentalsFinancialsIncomeStatement) GetYearlyOk() (*map[string]IncomeStatement, bool)`
 
 GetYearlyOk returns a tuple with the Yearly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetYearly
 
-`func (o *FundamentalsFinancialsBalanceSheet) SetYearly(v map[string]FundamentalsFinancial)`
+`func (o *FundamentalsFinancialsIncomeStatement) SetYearly(v map[string]IncomeStatement)`
 
 SetYearly sets Yearly field to given value.
 
 ### HasYearly
 
-`func (o *FundamentalsFinancialsBalanceSheet) HasYearly() bool`
+`func (o *FundamentalsFinancialsIncomeStatement) HasYearly() bool`
 
 HasYearly returns a boolean if a field has been set.
 

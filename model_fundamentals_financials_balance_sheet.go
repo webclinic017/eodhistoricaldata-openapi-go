@@ -16,7 +16,9 @@ import (
 
 // FundamentalsFinancialsBalanceSheet struct for FundamentalsFinancialsBalanceSheet
 type FundamentalsFinancialsBalanceSheet struct {
-	CurrencySymbol *string `json:"currency_symbol,omitempty"`
+	CurrencySymbol *string                           `json:"currency_symbol,omitempty"`
+	Quarterly      *map[string]FundamentalsFinancial `json:"quarterly,omitempty"`
+	Yearly         *map[string]FundamentalsFinancial `json:"yearly,omitempty"`
 }
 
 // NewFundamentalsFinancialsBalanceSheet instantiates a new FundamentalsFinancialsBalanceSheet object
@@ -68,10 +70,80 @@ func (o *FundamentalsFinancialsBalanceSheet) SetCurrencySymbol(v string) {
 	o.CurrencySymbol = &v
 }
 
+// GetQuarterly returns the Quarterly field value if set, zero value otherwise.
+func (o *FundamentalsFinancialsBalanceSheet) GetQuarterly() map[string]FundamentalsFinancial {
+	if o == nil || o.Quarterly == nil {
+		var ret map[string]FundamentalsFinancial
+		return ret
+	}
+	return *o.Quarterly
+}
+
+// GetQuarterlyOk returns a tuple with the Quarterly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FundamentalsFinancialsBalanceSheet) GetQuarterlyOk() (*map[string]FundamentalsFinancial, bool) {
+	if o == nil || o.Quarterly == nil {
+		return nil, false
+	}
+	return o.Quarterly, true
+}
+
+// HasQuarterly returns a boolean if a field has been set.
+func (o *FundamentalsFinancialsBalanceSheet) HasQuarterly() bool {
+	if o != nil && o.Quarterly != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQuarterly gets a reference to the given map[string]FundamentalsFinancial and assigns it to the Quarterly field.
+func (o *FundamentalsFinancialsBalanceSheet) SetQuarterly(v map[string]FundamentalsFinancial) {
+	o.Quarterly = &v
+}
+
+// GetYearly returns the Yearly field value if set, zero value otherwise.
+func (o *FundamentalsFinancialsBalanceSheet) GetYearly() map[string]FundamentalsFinancial {
+	if o == nil || o.Yearly == nil {
+		var ret map[string]FundamentalsFinancial
+		return ret
+	}
+	return *o.Yearly
+}
+
+// GetYearlyOk returns a tuple with the Yearly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FundamentalsFinancialsBalanceSheet) GetYearlyOk() (*map[string]FundamentalsFinancial, bool) {
+	if o == nil || o.Yearly == nil {
+		return nil, false
+	}
+	return o.Yearly, true
+}
+
+// HasYearly returns a boolean if a field has been set.
+func (o *FundamentalsFinancialsBalanceSheet) HasYearly() bool {
+	if o != nil && o.Yearly != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetYearly gets a reference to the given map[string]FundamentalsFinancial and assigns it to the Yearly field.
+func (o *FundamentalsFinancialsBalanceSheet) SetYearly(v map[string]FundamentalsFinancial) {
+	o.Yearly = &v
+}
+
 func (o FundamentalsFinancialsBalanceSheet) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CurrencySymbol != nil {
 		toSerialize["currency_symbol"] = o.CurrencySymbol
+	}
+	if o.Quarterly != nil {
+		toSerialize["quarterly"] = o.Quarterly
+	}
+	if o.Yearly != nil {
+		toSerialize["yearly"] = o.Yearly
 	}
 	return json.Marshal(toSerialize)
 }

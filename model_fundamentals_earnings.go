@@ -18,7 +18,7 @@ import (
 type FundamentalsEarnings struct {
 	History *map[string]FundamentalsEarningsHistory `json:"History,omitempty"`
 	Trend   *map[string]FundamentalsEarningsTrend   `json:"Trend,omitempty"`
-	Annual  *map[string]FundamentalsEarningsAnnual  `json:"Annual,omitempty"`
+	Annual  *map[string]FundamentalsEarningsHistory `json:"Annual,omitempty"`
 }
 
 // NewFundamentalsEarnings instantiates a new FundamentalsEarnings object
@@ -103,9 +103,9 @@ func (o *FundamentalsEarnings) SetTrend(v map[string]FundamentalsEarningsTrend) 
 }
 
 // GetAnnual returns the Annual field value if set, zero value otherwise.
-func (o *FundamentalsEarnings) GetAnnual() map[string]FundamentalsEarningsAnnual {
+func (o *FundamentalsEarnings) GetAnnual() map[string]FundamentalsEarningsHistory {
 	if o == nil || o.Annual == nil {
-		var ret map[string]FundamentalsEarningsAnnual
+		var ret map[string]FundamentalsEarningsHistory
 		return ret
 	}
 	return *o.Annual
@@ -113,7 +113,7 @@ func (o *FundamentalsEarnings) GetAnnual() map[string]FundamentalsEarningsAnnual
 
 // GetAnnualOk returns a tuple with the Annual field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FundamentalsEarnings) GetAnnualOk() (*map[string]FundamentalsEarningsAnnual, bool) {
+func (o *FundamentalsEarnings) GetAnnualOk() (*map[string]FundamentalsEarningsHistory, bool) {
 	if o == nil || o.Annual == nil {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *FundamentalsEarnings) HasAnnual() bool {
 	return false
 }
 
-// SetAnnual gets a reference to the given map[string]FundamentalsEarningsAnnual and assigns it to the Annual field.
-func (o *FundamentalsEarnings) SetAnnual(v map[string]FundamentalsEarningsAnnual) {
+// SetAnnual gets a reference to the given map[string]FundamentalsEarningsHistory and assigns it to the Annual field.
+func (o *FundamentalsEarnings) SetAnnual(v map[string]FundamentalsEarningsHistory) {
 	o.Annual = &v
 }
 
